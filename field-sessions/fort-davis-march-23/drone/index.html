@@ -1,0 +1,1195 @@
+<!-- Elements added to "main.html" will be displayed on all pages -->
+ 
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Website for TACC DSO Services">
+      
+      
+        <meta name="author" content="UT Austin DSO Team">
+      
+      
+        <link rel="canonical" href="https://in-for-disaster-analytics.github.io/REDI-Documentation/field-sessions/fort-davis-march-23/drone/">
+      
+      
+        <link rel="prev" href="../../">
+      
+      
+        <link rel="next" href="../lidar/">
+      
+      
+      <link rel="icon" href="https://cdn.jsdelivr.net/gh/TACC/Core-CMS-Custom@813aa7c/ptdatax_assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Drone Operations - Decision Support Office</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family='Benton+Sans',+'Open+Sans':300,300i,400,400i,700,700i%7CRoboto:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"'Benton Sans', 'Open Sans'";--md-code-font:"Roboto"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/tacc.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unmanned-aerial-drone-operations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      <!--
+  Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine classes -->
+
+
+  
+
+
+<!-- Header -->
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="Header"
+  >
+
+    <!-- Link to home -->
+    <a
+      href="../../.."
+      title="Decision Support Office"
+      class="md-header__button md-logo"
+      aria-label="Decision Support Office"
+      data-md-component="logo"
+    >
+      
+  <img src="../../../assets/pt2050/planes.svg" alt="logo">
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Decision Support Office
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Drone Operations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    <!-- Color palette toggle -->
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+
+    <!-- User preference: color palette -->    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+
+    <!-- Site language selector -->
+    
+
+
+
+    <!-- Repository information -->
+    <!-- Removed -->
+  </nav>
+
+  <!-- Navigation tabs (sticky) -->
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../about/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../projects/central-texas/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Decision Support Office" class="md-nav__button md-logo" aria-label="Decision Support Office" data-md-component="logo">
+      
+  <img src="../../../assets/pt2050/planes.svg" alt="logo">
+
+    </a>
+    Decision Support Office
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/In-For-Disaster-Analytics/REDI-Documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    In-For-Disaster-Analytics/REDI-Documentation
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../about/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/philosophy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Philosophy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/concept-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Concept Models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Meet the Team
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Projects
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/central-texas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Central Texas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/nna-alaska/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alaskan Yukon
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/rgv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    South Texas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/setx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SETx
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/subsidence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Subsidence
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fort-davis-mcdonald-observatory-field-research-trip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fort Davis-McDonald Observatory Field Research Trip
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#federal-aviation-administration-faa-preparations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Federal Aviation Administration (FAA) Preparations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-steps-for-obtaining-a-remote-pilot-certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Steps for Obtaining a Remote Pilot Certificate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faa-part-107-authorizations-and-businessprivate-flight-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAA Part 107 Authorizations and Business/Private Flight Permissions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drone-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Drone Registration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#airspace-preflight-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Airspace Preflight Check
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#business-and-private-owner-flight-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business and Private Owner Flight Permissions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#equipment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Equipment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flight-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flight Training
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-flight-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pre-Flight Checklist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#field-training-exercise-ftx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Field Training Exercise (FTX)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Field Training Exercise (FTX)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lessons Learned
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lessons Learned">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rc-pro-controller-user-interface-user-experience-uiux" class="md-nav__link">
+    <span class="md-ellipsis">
+      RC Pro Controller User Interface / User Experience (UI/UX)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-kmls-and-convert-imagery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create KMLs and Convert Imagery
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#locate-and-crop-imagery-for-use-as-a-basemap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Locate and Crop Imagery for Use as a Basemap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camera-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Camera Settings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+                  
+
+
+  
+  
+
+
+<h1 id="unmanned-aerial-drone-operations">Unmanned Aerial Drone Operations<a class="headerlink" href="#unmanned-aerial-drone-operations" title="Permanent link">&para;</a></h1>
+<h2 id="fort-davis-mcdonald-observatory-field-research-trip"><em>Fort Davis-McDonald Observatory Field Research Trip</em><a class="headerlink" href="#fort-davis-mcdonald-observatory-field-research-trip" title="Permanent link">&para;</a></h2>
+<h2 id="federal-aviation-administration-faa-preparations">Federal Aviation Administration (FAA) Preparations<a class="headerlink" href="#federal-aviation-administration-faa-preparations" title="Permanent link">&para;</a></h2>
+<p>The FAA defines an Unmanned Aircraft System (UAS) as an unmanned aircraft and all associated support equipment, control station, data links, telemetry, communications, and navigation equipment necessary to operate the unmanned aircraft. In simpler terms, it refers to any aircraft operated without a human pilot on board, controlled remotely or autonomously. This includes drones, quadcopters, and other similar unmanned aircraft.  </p>
+<p>Securing an FAA Remote Pilot Certificate is mandatory to operate your drone commercially within the United States under the Small UAS Rule (Part 107). This entails successfully passing a knowledge test, illustrating your comprehension of FAA regulations, airspace categorization, operational prerequisites, the weather's impact on drone flight, and other fundamental elements of safe drone operation. This certification stands as a vital measure to guarantee airspace safety and protect other aircraft, people, and property.</p>
+<h2 id="general-steps-for-obtaining-a-remote-pilot-certificate">General Steps for Obtaining a Remote Pilot Certificate<a class="headerlink" href="#general-steps-for-obtaining-a-remote-pilot-certificate" title="Permanent link">&para;</a></h2>
+<p>Self-Study. Test preparation courses for pay are available, but anyone with an aviation background or previous flight training can self-study using the reference, “<a href="https://www.faa.gov/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/remote_pilot_study_guide.pdf">FAA Remote Pilot Study Guide</a>” located here: </p>
+<p>Other references recommended by the FAA, as revisions were made on April 21, 2021 to 14 CFR part 107 and a new 14 CFR part 89 for three new topics covered on the revised Unmanned Aircraft General (UAG) airman knowledge test:
+1. Operations Over People
+2. Remote Identification
+3. Night Operations</p>
+<p>The new topics listed above will be added to the existing topic list:
+4. Applicable regulations relating to small, unmanned aircraft system rating privileges, limitations, and flight operation
+5. Effects of weather on small, unmanned aircraft performance
+6. Small unmanned aircraft loading and performance
+7. Emergency procedures
+8. Crew resource management
+9. Determining the performance of small, unmanned aircraft
+10. Maintenance and preflight inspection procedures</p>
+<ul>
+<li>These changes will have a direct effect on airman knowledge testing for a Remote Pilot Certificate with a Small Aircraft Rating. Remote Pilot – Small Unmanned Aircraft Systems Airman Certification Standards (<a href="https://www.faa.gov/sites/faa.gov/files/training_testing/testing/acs/uas_acs.pdf">FAA-S-ACS-10B</a>) </li>
+<li><a href="https://www.govinfo.gov/content/pkg/FR-2021-01-15/pdf/2020-28947.pdf">Federal Register Vol. 86, No. 10, Operation of Small Unmanned Aircraft Systems Over People</a> (Note: All new knowledge test questions were drafted from the rule only, beginning on page 68.) </li>
+<li><a href="https://www.govinfo.gov/content/pkg/FR-2021-01-15/pdf/2020-28948.pdf">Federal Register Vol. 86, No. 10, Remote Identification of Unmanned Aircraft</a> (Note: All new knowledge test questions were drafted from the rule only, beginning on page 116.) </li>
+<li><a href="https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_107-2A.pdf">AC 107-2A, Small Unmanned Aircraft System</a> (Small UAS)</li>
+<li>Pilot’s Handbook of Aeronautical Knowledge (FAA-H-8083-25B) <a href="https://www.faa.gov/aviation/phak/pilots-handbook-aeronautical-knowledge-faa-h-8083-25b">Chapter 17: Aeromedical Factors</a> (Note: Applicable information found on pages 22 through 27 (pages 17-22 through 17-27 in full version of the handbook).) </li>
+<li><a href="https://www.faa.gov/sites/faa.gov/files/training_testing/testing/acts/ftn_faqs.pdf">Get your FAA Tracking Number (FTN)</a>.You will need to have your FTN prior to scheduling and registering for any FAA Airman Knowledge Test scheduled on or after January 13, 2020.</li>
+</ul>
+<p><a href="https://faa.psiexams.com/faa/login">Find a Test Center</a>. There are approximately 7,000 contracted testing centers throughout the United States. The testing supplement is called, “Airman Knowledge Testing Supplement for Sport Pilot, Recreational Pilot, Remote Pilot, and Private Pilot.” <a href="https://www.faa.gov/training_testing/testing/supplements/media/sport_rec_private_akts.pdf">This supplement</a> can help with practice tests.</p>
+<p>Apply for your Certificate. IACRA Application -- FAA's pilot management system. This is where you apply for your Part 107 Remote Pilot certificate (<a href="https://www.peltierphotocourses.com/pages/after-passing-part-107-test-iacra">a nice checklist</a> from an independent source). </p>
+<p>The exam fee is $175.00, the passing standard is 70 percent, and according to the FAA the pass rate was 85.68 percent in 2022, with an average score of 80.31 percent. The FAA will issue a temporary certificate in 10-15 business days and mail the permanent wallet license in 4-6 weeks. The temporary certificate must be in the pilot’s possession while flying, until the permanent certificate arrives.</p>
+<h2 id="faa-part-107-authorizations-and-businessprivate-flight-permissions">FAA Part 107 Authorizations and Business/Private Flight Permissions<a class="headerlink" href="#faa-part-107-authorizations-and-businessprivate-flight-permissions" title="Permanent link">&para;</a></h2>
+<p>The FAA mandates that pilots adhere to Part 107 authorizations, which encompass essential checks like airspace assessments, weather evaluations. These requirements are crucial components of safe and responsible drone operation for commercial purposes. By conducting airspace checks, pilots ensure they are aware of any restrictions or regulations governing the area where they intend to fly. Similarly, performing weather checks allows pilots to assess conditions that could affect flight safety, such as high winds, precipitation, or low visibility, and other risk evaluations.</p>
+<h2 id="drone-registration">Drone Registration<a class="headerlink" href="#drone-registration" title="Permanent link">&para;</a></h2>
+<p>Drone registration with the Federal Aviation Administration (FAA) is mandatory for all drones weighing between 0.55 pounds (250 grams) and 55 pounds (approximately 25 kilograms) that are operated outdoors in the United States for recreational or commercial purposes. This registration requirement is in place to help ensure accountability and safety in the national airspace system. Failure to register your drone can result in penalties and fines.</p>
+<p>To register your drone with the Federal Aviation Administration (FAA) in the United States, follow these steps:</p>
+<ul>
+<li><strong>Create an Account</strong>: Visit the <a href="https://faadronezone.faa.gov">FAA's official drone registration </a>website. If you do not already have an account, you will need to create one.</li>
+<li><strong>Provide Information</strong>: Once logged in, you will be prompted to provide information about yourself and your drone. This typically includes your name, address, email, and details about your drone, such as its make, model, and serial number.</li>
+<li><strong>Pay Registration Fee</strong>: There is a registration fee required by the FAA at $5.00 for each drone registration and is valid for three years. You will need to pay this fee using a credit or debit card.</li>
+<li><strong>Receive Registration Number</strong>: After completing the registration process and payment, you will receive a unique registration number for your drone. This number must be affixed to your drone in a visible location.</li>
+<li><strong>Keep Proof of Registration</strong>: It is essential to keep proof of registration with you whenever you are operating your drone. This can be a digital or printed copy of your registration certificate.</li>
+<li><strong>Renew Registration</strong>: Remember to renew your drone registration every three years to maintain compliance with FAA regulations.</li>
+<li><strong>Review Regulations</strong>: Familiarize yourself with the FAA's regulations for drone operation, including airspace restrictions, altitude limits, and any other requirements specific to your location or type of drone activity.</li>
+</ul>
+<h2 id="airspace-preflight-check">Airspace Preflight Check<a class="headerlink" href="#airspace-preflight-check" title="Permanent link">&para;</a></h2>
+<p>The FAA also directs pilots to use LAANC (Low Altitude Authorization and Notification Capability) for obtaining authorization to fly drones in controlled airspace. LAANC is an automated system that enables drone operators to request and receive near real-time authorization to fly in airspace where air traffic control services are provided. By utilizing LAANC, pilots can efficiently obtain the necessary permissions to operate their drones safely within controlled airspace while ensuring compliance with FAA regulations. This streamlined process enhances airspace safety by providing operators with timely authorization and minimizing potential conflicts with crewed aircraft.</p>
+<p>Additionally, for government and public safety entities, FAA issues Certificates of Authorization (COA) allowing them to operate drones for specific purposes, such as law enforcement, search and rescue, or research.</p>
+<h2 id="business-and-private-owner-flight-permissions">Business and Private Owner Flight Permissions<a class="headerlink" href="#business-and-private-owner-flight-permissions" title="Permanent link">&para;</a></h2>
+<p>Overall, communication and collaboration with property owners are key to ensuring safe and lawful drone flights over both business and private properties. By obtaining necessary permissions and adhering to regulations, drone pilots can conduct their operations responsibly while minimizing potential conflicts or concerns. This approach fosters a positive relationship between drone operators and the communities they serve while ensuring respect for property rights and privacy considerations.</p>
+<h2 id="equipment">Equipment<a class="headerlink" href="#equipment" title="Permanent link">&para;</a></h2>
+<p>The primary drone-related equipment for the research field study included:
+- <strong>DJI Mavic 3 Multispectral drone:</strong> 
+The Mavic 3M is a professional-grade drone designed for agricultural applications and environmental monitoring. It combines the advanced flight capabilities of the DJI Mavic series with a multispectral imaging system, allowing users to capture detailed data for crop health analysis, vegetation mapping, and other specialized tasks. Our study collected orthophotos for change detection, and oblique photos to assist in damage assessments.</p>
+<p><strong>Key features of the DJI Mavic 3 Multispectral include:</strong> 
+<strong>Multispectral Camera</strong>: The drone is equipped with a specialized multispectral camera that captures images across multiple wavelengths of light, including visible and non-visible spectra such as near-infrared. This enables precise analysis of plant health, chlorophyll levels, and other vegetation characteristics.
+Multispectral Camera </p>
+<ol>
+<li>Image Sensor </li>
+<li>1/2.8-inch CMOS, effective pixels: 5 MP </li>
+<li>Lens </li>
+<li>FOV: 73.91° (61.2° x 48.10°) </li>
+<li>Equivalent focal length: 25 mm </li>
+<li>Aperture: f/2.0 </li>
+<li>Focus: Fixed Focus </li>
+<li>Multispectral Camera Band </li>
+<li>Green (G): 560 ± 16 nm; </li>
+<li>Red (R): 650 ± 16 nm; </li>
+<li>Red Edge (RE): 730 ± 16 nm; </li>
+<li>Near infrared (NIR): 860 ± 26 nm; </li>
+<li>Gain Range </li>
+<li>1x-32x </li>
+<li>Shutter Speed </li>
+<li>Electronic Shutter: 1/30~1/12800 s </li>
+<li>Max Image Size </li>
+<li>2592×1944 </li>
+<li>Image Format </li>
+<li>TIFF </li>
+<li>Video Format </li>
+<li>MP4 (MPEG-4 AVC/H.264) </li>
+<li>Photo Shooting Mode <ol>
+<li>Single shot: 5 MP </li>
+<li>Timelapse: 5 MP </li>
+<li>TIFF: 2/3/5/7/10/15/20/30/60 s </li>
+</ol>
+</li>
+<li>Video Resolution <ol>
+<li>H.264  </li>
+<li>FHD: 1920 x 1080@30fps </li>
+<li>Video content: NDVI/GNDVI/NDRE </li>
+</ol>
+</li>
+<li>Max Video Bitrate <ol>
+<li>Stream: 60 Mbps</li>
+</ol>
+</li>
+</ol>
+<p><strong>High-Resolution Imaging:</strong> The multispectral camera captures high-resolution imagery with detailed spectral information, allowing for accurate and comprehensive data analysis.
+<strong>Mapping Software with DJI Terra, or open source</strong>: The DJI Mavic 3 Multispectral is compatible with DJI Terra, a mapping and analysis software platform. Users can easily process and analyze the data captured by the drone to generate maps, 3D models, and actionable insights. Open-source software used in our project included OpenDroneMap ( https://opendronemap.org/ ), which provides solutions for collecting, processing, analyzing, and displaying aerial data.
+<strong>Flight Performance:</strong> Like other drones in the DJI Mavic series, the Mavic 3 Multispectral offers advanced flight performance and stability, with features such as obstacle avoidance, intelligent flight modes, and extended flight time.
+<strong>Compact and Portable Design:</strong> Despite its advanced capabilities, the Mavic 3 Multispectral maintains a compact and portable design, making it easy to transport and deploy in the field.</p>
+<ul>
+<li><strong>RC Pro Enterprise Remote Controller.</strong>
+A remote controller, often referred to as a transmitter or transmitter controller, is used to control the drone's flight. It communicates wirelessly with the drone and allows the pilot to maneuver the aircraft, adjust its altitude, speed, and orientation, and control any onboard cameras or other features. Using the Pilot 2 software, mission planning was developed that enabled automated flight modes and detailed configurations.</li>
+</ul>
+<p><strong>Smartphone:</strong> Prior to launch and where data services were available, a cell phone was used to check airspace and weather advisories, and recent or current weather observations.</p>
+<p><strong>Batteries and Charger:</strong> Drones are powered by rechargeable batteries, so our team purchased three extra batteries (four total) and a charger. This was essential for extending flight time and ensuring uninterrupted operation during longer sessions. Each battery is rated for 43 min maximum flight time; however, windy conditions will reduce this time due to extra motor throttling to maintain flight attitude, altitude, and stability.</p>
+<p><strong>Safety Equipment:</strong> Safety equipment such as a fire extinguisher, first aid kit, and high-visibility vest may be necessary, especially for commercial drone operations or flights in remote areas. We also brought sunglasses and sunscreen due to the sunny conditions.</p>
+<p><strong>Accessories:</strong> We had various accessories like spare propellers, drone carrying case, USB cable, adapter and microSD card case and landing pad. Lens filters are an option, and can be important for convenience, protection, and enhancing the capabilities of the drone image and video capture.</p>
+<p><strong>Personal Protective Equipment (PPE):</strong> Depending on the nature of the flight operations, personal protective equipment such as gloves, safety glasses, and a helmet may be necessary, particularly when flying in challenging or hazardous environments.</p>
+<h2 id="flight-training">Flight Training<a class="headerlink" href="#flight-training" title="Permanent link">&para;</a></h2>
+<p>The drone pilot for this research study had previously logged fixed wing and drone flight time but needed to become familiar with the DJI systems and configurations. Piloting any type of aircraft requires ongoing practice which can include both simulator training and real-world flying. Periodic check rides or practical flight tests by seasoned pilots are recommended, but not required for drones.</p>
+<p>Drone flight training is essential for aspiring pilots to develop the skills and knowledge necessary for safe and effective drone operation. Proper training not only enhances flight proficiency but also instills a strong understanding of regulations, airspace requirements, and emergency procedures.</p>
+<p>During drone flight training, pilots learn and hone their skills in fundamental flight maneuvers, navigation techniques, and best practices for various scenarios. They also become familiar with the features and capabilities of their specific drone model. Training programs often cover topics such as weather effects on flight, airspace classification, and privacy considerations.</p>
+<h2 id="pre-flight-checklist">Pre-Flight Checklist<a class="headerlink" href="#pre-flight-checklist" title="Permanent link">&para;</a></h2>
+<p>One crucial aspect emphasized in drone flight training and day-to-day operations, is the importance of a pre-flight checklist. A pre-flight checklist is a systematic process that ensures all necessary steps are taken before each flight, reducing the risk of errors or oversights that could compromise safety.</p>
+<p>DJI includes a pre-flight checklist in its user manual (pg 31). This is the general checklist for most DJI drones:</p>
+<ol>
+<li>Pre-flight Inspection:<ol>
+<li>Remove gimbal protector before starting aircraft, otherwise damage to the camera system may occur.</li>
+<li>Check the drone for any physical damage, including the body, propellers, and landing gear.</li>
+<li>Ensure all components are securely attached.</li>
+<li>Ensure micro-SD card is inserted and the card slot cover is closed.</li>
+</ol>
+</li>
+<li>Battery Check:<ol>
+<li>Confirm that the battery is fully charged and properly inserted into the drone.</li>
+<li>Check the battery status indicators.</li>
+<li>Controller Check:</li>
+<li>Power on the remote controller and drone, and ensure it is paired with the drone.</li>
+<li>Check signal strength and Pilot 2 controller parameters, especially terrain avoidance and return to home (RTH) settings.</li>
+</ol>
+</li>
+<li>GPS and Compass Calibration:<ol>
+<li>Verify GPS connectivity and perform a compass calibration if necessary.</li>
+<li>Camera and Gimbal Check:</li>
+<li>Ensure the camera and gimbal are securely attached and functioning properly.</li>
+<li>Check camera settings and focus.</li>
+</ol>
+</li>
+<li>Flight Mode and Settings:<ol>
+<li>Select the appropriate flight mode for your mission.</li>
+<li>Load your flight plan if relevant.</li>
+<li>Review and adjust flight settings as needed.</li>
+<li>Obstacle Avoidance System:</li>
+<li>Verify that obstacle avoidance sensors are functioning correctly.</li>
+<li>Check sensor status indicators.</li>
+</ol>
+</li>
+<li>Propeller Check:<ol>
+<li>Inspect propellers for damage and ensure they are securely attached.</li>
+<li>Weather Conditions:</li>
+<li>Check weather forecasts and assess wind speed, precipitation, and visibility.</li>
+<li>Ensure conditions are suitable for safe flight.</li>
+<li>Emergency Procedures:</li>
+<li>Review emergency procedures, such as initiating return-to-home (RTH) or manual landing.</li>
+<li>Ensure familiarity with emergency features and actions that may need to be taken.</li>
+</ol>
+</li>
+</ol>
+<h2 id="field-training-exercise-ftx">Field Training Exercise (FTX)<a class="headerlink" href="#field-training-exercise-ftx" title="Permanent link">&para;</a></h2>
+<p>03/04/2024, Long Canyon near Emma Long Metropolitan Park, Austin, Texas</p>
+<p>The objectives were to test all equipment prior to the Fort Davis field study. The drone pilot logged his first flights with the Mavic 3M and manually flew over a creek and residential home while taking video and multispectral images. The first stages of learning how to configure an automated flight route began, but there were a few critical settings and other technical roadblocks preventing the drone from taking off. These issues were troubleshot and solved in the first few days at Fort Davis.</p>
+<h3 id="lessons-learned">Lessons Learned<a class="headerlink" href="#lessons-learned" title="Permanent link">&para;</a></h3>
+<p>The Fort Davis Field Study from March 18-22, 2024, had many positive moments, most of which were preceded by numerous challenges. Some of the problems just needed to be solved, while other troubles could only be mitigated to some degree. Also, some of the lessons learned simply highlighted the need for additional training and familiarization, as the equipment was purchased only a month or so prior to the field study.</p>
+<h4 id="rc-pro-controller-user-interface-user-experience-uiux">RC Pro Controller User Interface / User Experience (UI/UX)<a class="headerlink" href="#rc-pro-controller-user-interface-user-experience-uiux" title="Permanent link">&para;</a></h4>
+<p><strong>Next Button.</strong> The preflight check screen can be viewed whether the drone is on or off. When the drone is off, this screen is fixed with no scrolling. This was the norm, as the controller was studied in this state a lot before ever flying it. However, when the drone is running, the controller begins receiving data and populates numerous empty cells in the UI. Additionally, a new button appears on the screen, but it appears below the static screen UI and a thin scroll bar appears on the right margin. There is a button labeled, “Next,” which is only seen if you know to scroll down. This is what was initially missed at the earlier FTX which brought the automated flight plan to a halt. A very rudimentary step, but easily missed on day-1 with little familiarization. See figure 1.</p>
+<p><img alt="image" src="../images/drone/image%20%283%29.png" />
+Figure 1. Screenshot of Preflight Check UI with drone off. No Next button.</p>
+<p><strong>Max Altitude.</strong> The setting for Max Altitude in the Flight Controller Settings became an issue due to the higher elevation in West Texas (5,000 – 6,800 ft MSL) when compared with Austin, Texas (780 ft MSL). This setting had to be increased to 500 ft for the drone to take off when flying an automated flight route. At the time, this was not fully understood, because the working setting was still below ground level compared with mean sea level (MSL) elevation. Later it was realized that the drone has an altimeter (aviation barometer), and at takeoff the drone altimeter height is reset to zero feet above ground level (AGL), or height relative to the surface. So, the earlier, lower max height values allowed manual flight at the lower flight levels, and once the system needed to cross check settings against the flight plan, the higher flight levels in the plan (ex. 390 ft) created a dependency and forced the higher max height setting. See Figure 2.</p>
+<p><img alt="image" src="../images/drone/Picture1.jpg" />
+Figure 2. Flight Controller Settings. Max Altitude and Max Flight Distance</p>
+<p><strong>Geofencing</strong>. We wanted to create a custom geofence that would keep the drone out of specific geographic areas, however after much reading it was discovered that the Mavic 3M does not have a custom geofence capability. DJI Mavic 3 drones are equipped with built-in geofencing technology to enhance airspace safety and compliance with aviation regulations. DJI drones, including the Mavic 3, have predefined geofencing zones that include areas around airports, heliports, and other sensitive locations where drone flights are restricted or regulated. This also includes pre-programmed features such as,
+- No-Fly Zones
+- Restricted Zones
+- Dynamic Geofencing
+- Geofencing Alerts</p>
+<p>To mitigate this limitation, the pilot must use the Max Flight Distance setting shown in Figure 2. The drone will fly x distance and then stop and hover, until the pilot turns it around and flies it back toward the programmed home station. Not ideal, but it was used in some testing and worked. DJI allows the pilot to create polygons that keep the drone inside an area, but we were trying to create a polygon that would keep the drone outside an area. So, a better mitigation plan may be to create a flight plan where the area of interest polygon is digitized so a flight plan is built around the area of interest, like a square with a hole in the middle. The structure or land parcel to avoid is within the hole, and the rest of the polygon area is the collection zone. This would need to be tested, as it may try to fly through the hole for efficiency of flight paths, but that would violate the purpose of the defined planning area. Also, it may not recognize a complex polygon’s geometry and fail to import the KML, or it may import the KML and ignore the hole.</p>
+<p>Another more nuanced method was devised to avoid areas when flying oblique imagery missions. In the first oblique flight it was discovered that the drone will fly five flight patterns. The first pattern collects NADIR-oriented orthophotos, then the remaining four passes collect oblique images, each at 90 degrees from the other. See figures 3.</p>
+<p><img alt="image" src="../images/drone/Screenshot%202024-04-25%20at%201.49.33%E2%80%AFPM.png" />
+Figure 3. Orthophoto Pass #1. From flight plan on RC Pro Controller (Left)Oblique Passes #2 – 5. From flight plan on RC Pro Controller(Right)</p>
+<p>Oblique photography needs to fly outside of the planning area by 40-50 percent of the length and width if you are flying a rectangular planning area. If a pilot is unaware of this behavior, the drone may fly into unauthorized areas adjacent to the collection area, so you must calculate for this in your collection planning. We called this area outside of the collection area “spillage.” On our second oblique flight, we estimated the spillage of the flight route, and the results were as expected. The drone dutifully stayed within the spillage zones, and within the main planning polygon area.</p>
+<p><strong>Disconnected Maps in the RC Pro Controller</strong>. We had problems getting the RC Pro to recognize KMLs that we created in ArcGIS Pro. DJI allows users to create and load Keyhole Markup Language (KML) files and imagery into the Remote Controller (RC) Pro Controller for use in disconnected environments. Here is how this process works:</p>
+<h4 id="create-kmls-and-convert-imagery">Create KMLs and Convert Imagery<a class="headerlink" href="#create-kmls-and-convert-imagery" title="Permanent link">&para;</a></h4>
+<p>Creation of KML Files: Users can create KML files using various mapping and GIS software programs, such as Google Earth, QGIS, or Esri ArcGIS Pro. These KML files contain geographic data, including waypoints, routes, and polygons, that define flight paths or areas of interest for drone missions.</p>
+<p>Converting KML Files into the Proper Format: Once the KML files are created, users need to check the axis order of the coordinate pairs for each vertex in the KML line or polygon. Within the EPSG database, the reference code 4326 corresponds to a geographic Coordinate Reference System (CRS) employing a (latitude, longitude) axis order. Yet, prevalent software in the industry interprets EPSG:4326 as a geographic CRS using a (longitude, latitude) axis order due to legacy OGC specifications being structured as such. This discrepancy extends beyond EPSG:4326, affecting numerous geographic CRS entries within the EPSG database. The axis order commonly recognized by existing software contradicts the specifications outlined in the EPSG database. <a href="https://docs.geotools.org/latest/userguide/library/referencing/order.html">A detailed historical account</a>.</p>
+<p>One workaround is to open the KML file as a JSON file in a text reader like NotePad++. Then manually or programmatically swap the lon-lat pairs with lat-lon pairs.</p>
+<h4 id="locate-and-crop-imagery-for-use-as-a-basemap">Locate and Crop Imagery for Use as a Basemap<a class="headerlink" href="#locate-and-crop-imagery-for-use-as-a-basemap" title="Permanent link">&para;</a></h4>
+<p>One method we experimented with was using an online resource called <a href="https://mygeodata.cloud/converter/map-to-mbtiles">MyGeodata Converter</a>. The service converts GeoTIFF images into MBTiles, which is the format required by the RC Pro. This worked well and is a free service for conversions that are &lt;5 MB. </p>
+<p><strong>Loading KMLs and Imagery into RC Pro Controller:</strong> Users can connect their device running GS Pro to the Remote Controller (RC) Pro Controller via a compatible cable or wireless connection. Once connected, they can access the KML files and imagery stored in GS Pro and load them into the RC Pro Controller for use during flight missions.</p>
+<p><strong>Mission Execution:</strong> With the KML files and imagery loaded into the RC Pro Controller, users can execute pre-planned drone missions, follow predefined flight paths, and capture imagery or data as specified in the mission plan.</p>
+<p><strong>Data Collection and Analysis:</strong> After completing the drone mission, users can analyze the captured data and imagery for various applications, such as mapping, surveying, inspection, or environmental monitoring. The KMLs can also be reused in the analysis to maintain coordinate and geometry integrity, and accurate visualizations.</p>
+<p><strong>MicroSD Card Compatibility:</strong> Our team discovered that our 256 GB Samsung PRO Plus V30 microSD cards did not work in the drone. This specific media was on the compatibility list specifically for the Mavic 3 Multispectral drone. We reformatted the cards to exFAT and were careful about our process and the order in which our steps occurred. The card was readable and writable on our Dell Toughbook, but the drone would not accept it. So, we used the included 64 GB Lexar U3 card for the drone and had no issues.</p>
+<p>When choosing a microSD card for the Mavic 3 Multispectral and RC Pro Controller, it is essential to consider the following factors:</p>
+<p><strong>Write Speed</strong>: Look for microSD cards with fast write speeds to ensure smooth recording of high-resolution images and videos during flight. DJI often recommends cards with Class 10 or UHS-I Speed Class 3 (U3) ratings for optimal performance.</p>
+<p><strong>Storage Capacity</strong>: Choose a microSD card with sufficient storage capacity to accommodate the volume of data expected to be generated during drone missions. DJI typically specifies maximum supported capacities to ensure compatibility.</p>
+<p><strong>Compatibility</strong>: Ensure that the microSD card is compatible with the Mavic 3 Multispectral and RC Pro Controller. Recommended microSD cards: https://ag.dji.com/mavic-3-m/specs</p>
+<p><strong>Remote Controller:</strong>
+- SanDisk Extreme PRO 64GB V30 A2 microSDXC
+- SanDisk High Endurance 64GB V30 microSDXC
+- SanDisk Extreme 128GB V30 A2 microSDXC
+- SanDisk Extreme 256GB V30 A2 microSDXC
+- SanDisk Extreme 512GB V30 A2 microSDXC
+- Lexar 667x 64GB V30 A2 microSDXC
+- Lexar High-Endurance 64GB V30 microSDXC
+- Lexar High-Endurance 128GB V30 microSDXC
+- Lexar 667x 256GB V30 A2 microSDXC
+- Lexar 512GB V30 A2 microSDXC
+- Samsung EVO Plus 64GB V30 microSDXC
+- Samsung EVO Plus 128GB V30 microSDXC
+- Samsung EVO Plus 256GB V30 microSDXC
+- Samsung EVO Plus 512GB V30 microSDXC
+- Kingston Canvas Go! Plus 128GB V30 A2 microSDXC
+- Kingston Canvas React Plus 128GB V90 A1 microSDXC
+<strong>Aircraft:</strong>
+- SanDisk Extreme 32GB V30 A1 microSDHC
+- SanDisk Extreme PRO 32GB V30 A1 microSDHC
+- SanDisk Extreme 512GB V30 A2 microSDXC
+- Lexar 1066x 64GB V30 A2 microSDXC (included)
+- Kingston Canvas Go! Plus 64GB V30 A2 microSDXC
+- Kingston Canvas React Plus 64GB V90 A1 microSDXC
+- Kingston Canvas Go! Plus 128GB V30 A2 microSDXC
+- Kingston Canvas React Plus 128GB V90 A1 microSDXC
+- Kingston Canvas React Plus 256GB V90 A2 microSDXC
+- Samsung PRO Plus 256GB V30 A2 microSDXC (purchased, but no-go for aircraft use)</p>
+<p><strong>Reliability</strong>: Select microSD cards from reputable manufacturers known for producing high-quality, reliable storage media. Avoid generic or low-quality cards that may be prone to errors or failures.</p>
+<p><strong>Drone Flight Speed During Imagery Collections</strong>. This was the final issue to be resolved before we had a 100 percent successful collection flight. At this point, we had flown 8-10 partial test missions, but had yet to acquire a valid collection of images. During a pivotal test collection flight at the Prude Ranch, the aircraft took off and began following a new orthoimagery collection plan and the pilot observed that the controller was showing that no pictures had been taken, yet the mission was 20 percent complete. We were expecting 800+ photos, so the flight was aborted.</p>
+<p>The pilot mentioned the flight had programmed a solution for 21 mph. One team member had the idea to try half that speed minus a small conservation factor bringing the new speed to 9 mph, so the next flight was programmed for 7 mph which gave us a finer pixel density of 5 cm at 395 ft flight altitude. That night, the pilot read about how flight speed affects image quality, and this variable is also impacted by drone flight elevation and the camera settings. After reviewing multiple resources, including a calculator running on Excel, a common range of speeds emerged which was 1-8 mph for orthophoto missions. These numbers were close to the fast manual estimation, so the next flight was programmed for 7 mph, a finer pixel density of 5 cm, and a 395 ft flight altitude. When the pilot started the new collection mission, the controller began making audible, faux camera shutter sounds. This was the first test mission that worked 100 percent and collected all expected images. It is important to remember that you can program. After inspecting the image quality that evening, there was some minor blurring, so we lowered the speed to 5 mph which showed a noticeable improvement. We also tested lower flight levels at 250 ft which gave us improved 3.5 cm pixel density.</p>
+<h4 id="camera-settings">Camera Settings<a class="headerlink" href="#camera-settings" title="Permanent link">&para;</a></h4>
+<p>If the camera’s shutter speed lags too much, there will also be image blurring. Our camera settings were set to Automatic, as we did not have any solid guidance at the time on potentially better modes like shutter priority. In shutter priority mode, after you set the desired shutter speed, the camera automatically adjusts the aperture to achieve the correct exposure based on the camera's metering system and the available light. The aperture opens wider for faster shutter speeds and narrows for slower shutter speeds.</p>
+<p><strong>Exposure Compensation</strong>: In shutter priority mode, you can also use exposure compensation to adjust the overall exposure if needed. This allows you to make the image brighter or darker without changing the selected shutter speed. In future tests we should observe image quality differences and find one or more ideal configuration solutions by varying drone flight speed, flight elevation, enabling coordinated turns, and experimenting with shutter priority.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <!-- Footer -->
+<footer class="md-footer">
+
+    <!-- Link to previous and/or next page -->
+    
+  
+    <!-- Further information -->
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+  
+        <!-- Social links -->
+        
+      </div>
+    </div>
+  </footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.path", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "toc.follow"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
