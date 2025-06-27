@@ -1,0 +1,6 @@
+# South Texas
+
+## Description: 
+The Sites and Stories project in the Rio Grande Valley of South Texas continues the community-engagement approach for the collection, organization, analysis, and correlation of human experiences with environmental issues. This methodology proves valuable in uncovering latent factors that may elude purely quantitative data analysis, especially in regions lacking robust infrastructure for data gathering. The Rio Grande Valley has a historical record marked by recurrent devastating flooding events, including those triggered by Hurricane Beulah, and as recently as the June 2018 flooding events which caused substantial destruction of infrastructure and property, and displaced many of the affected residents. However, segments of the community exist in unincorporated areas which are typically marginalized in decision-making, resource allocation, and disaster preparedness efforts. Consequently, these communities lack adequate quantitative data and requisite support. The incorporation of social science engagement adds a layer of sophistication, enabling the identification of underlying issues, root causes, and innovative solutions that cater to both the community and the environment.
+
+**Principle Funder: [Planet Texas 2050](https://bridgingbarriers.utexas.edu/planet-texas-2050)**

@@ -1,5 +1,5 @@
 # Project Information
-site_name: Decision Support Office
+site_name: Decision Support Office 
 site_url: https://in-for-disaster-analytics.github.io/REDI-Documentation/
 site_author: UT Austin DSO Team
 site_description:  >-
@@ -9,7 +9,10 @@ site_description:  >-
 repo_name: In-For-Disaster-Analytics/REDI-Documentation
 repo_url: https://github.com/In-For-Disaster-Analytics/REDI-Documentation
 
-# Configuration
+# Custom Homepage Elements
+home_button1_url: policies/
+
+# Material Configuration
 theme:
   name: material
   logo: assets/pt2050/planes.svg
