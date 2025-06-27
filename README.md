@@ -1,8 +1,8 @@
-# REDI-Documentation
+# Subside
 
-Repository for .md documentation files to create a documentation site. The information can be found at the [gh-pages website](https://in-for-disaster-analytics.github.io/REDI-Documentation/).
+Repository for .md documentation files to create a documentation site for the Subside projects. The information can be found at the [gh-pages website](https://in-for-disaster-analytics.github.io/subside/).
 
-Updates to this website are pushed when the Live-Site branch gets updated.
+Updates to this website are pushed when the main branch gets updated.
 
 ## Website Contents
 
