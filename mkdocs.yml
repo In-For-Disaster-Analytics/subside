@@ -119,9 +119,9 @@ plugins:
       strict: false
       order: asc
       sort_type: natural
-  - privacy:
-      assets: false
-      external_links_attr_map:
-        target: _blank
+  # - privacy:
+  #     assets: false
+  #     external_links_attr_map:
+  #       target: _blank
   - search
 # Page tree
