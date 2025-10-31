@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUBSIDE - Subsidence System for Insight and Data Exploration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --tacc-blue: #005f86;
+            --tacc-dark: #1e3a8a;
+            --tacc-light-blue: #0084b4;
+            --tacc-orange: #bf5700;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #005f86 0%, #0084b4 100%);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f9fafb;
+            min-height: 100vh;
+        }
+        
+        /* Header with TWDB and UT branding */
+        .institutional-header {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 12px 0;
+        }
+        
+        .institutional-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .institutional-logos {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .logo-divider {
+            height: 30px;
+            width: 1px;
+            background: #d1d5db;
+        }
+        
+        /* Main Header */
+        .header {
+            background: var(--tacc-dark);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .logo-subtitle {
+            font-size: 12px;
+            opacity: 0.9;
+            margin-top: 2px;
+        }
+        
+        /* Navigation */
+        .nav-main {
+            display: flex;
+            gap: 35px;
+        }
+        
+        .nav-main a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .nav-main a:hover {
+            border-bottom-color: white;
+            opacity: 0.9;
+        }
+        
+        /* User Mode Selector */
+        .user-selector {
+            display: flex;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+            padding: 4px;
+            border-radius: 25px;
+        }
+        
+        .user-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .user-btn:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .user-btn.active {
+            background: white;
+            color: var(--tacc-dark);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 95, 134, 0.9), rgba(191, 87, 0, 0.9)),
+                        url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+');
+            color: white;
+            padding: 60px 0;
+            position: relative;
+        }
+        
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        
+        /* Quick Access Bar */
+        .quick-access {
+            background: white;
+            padding: 20px 0;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .quick-access-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .search-bar {
+            display: flex;
+            gap: 10px;
+            flex: 1;
+            max-width: 500px;
+        }
+        
+        .search-bar input {
+            flex: 1;
+            padding: 12px 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 25px;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+        
+        .search-bar input:focus {
+            outline: none;
+            border-color: var(--tacc-light-blue);
+            box-shadow: 0 0 0 3px rgba(0, 132, 180, 0.1);
+        }
+        
+        .search-bar button {
+            padding: 12px 30px;
+            background: var(--tacc-light-blue);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .search-bar button:hover {
+            background: var(--tacc-blue);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 132, 180, 0.2);
+        }
+        
+        .quick-tools {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .tool-btn {
+            padding: 10px 20px;
+            background: #f3f4f6;
+            border: 1px solid #e5e7eb;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .tool-btn:hover {
+            background: var(--tacc-light-blue);
+            color: white;
+            border-color: var(--tacc-light-blue);
+            transform: translateY(-1px);
+        }
+        
+        /* Main Content Layout */
+        .main-content {
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        /* Interface Tier Cards */
+        .tier-section {
+            margin-bottom: 40px;
+        }
+        
+        .tier-section h2 {
+            font-size: 28px;
+            color: #1f2937;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        .tier-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tier-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        
+        .tier-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+            border-color: var(--tacc-light-blue);
+        }
+        
+        .tier-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .tier-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .tier-card h3 {
+            font-size: 22px;
+            color: #1f2937;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .tier-card p {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .tier-features {
+            list-style: none;
+            padding-top: 20px;
+            border-top: 1px solid #f3f4f6;
+        }
+        
+        .tier-features li {
+            padding: 8px 0;
+            color: #4b5563;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .tier-features li::before {
+            content: '✓';
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        /* Statistics Dashboard */
+        .stats-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .stat-card {
+            background: #f9fafb;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s;
+        }
+        
+        .stat-card:hover {
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+        
+        .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--tacc-dark);
+            margin-bottom: 8px;
+        }
+        
+        .stat-change {
+            font-size: 14px;
+            color: #10b981;
+        }
+        
+        .stat-change.negative {
+            color: #ef4444;
+        }
+        
+        /* Map Section */
+        .map-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        .map-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .map-header h2 {
+            font-size: 24px;
+            color: #1f2937;
+            font-weight: 600;
+        }
+        
+        .map-controls {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .map-placeholder {
+            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+            height: 500px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .map-placeholder::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 132, 180, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        
+        /* Data Access Portal */
+        .data-portal {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .data-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        
+        .data-tab {
+            padding: 12px 24px;
+            background: transparent;
+            border: none;
+            color: #6b7280;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .data-tab:hover {
+            color: var(--tacc-dark);
+        }
+        
+        .data-tab.active {
+            color: var(--tacc-dark);
+        }
+        
+        .data-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--tacc-light-blue);
+        }
+        
+        .data-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .data-item {
+            padding: 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .data-item:hover {
+            border-color: var(--tacc-light-blue);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        .data-item h4 {
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+        
+        .data-item p {
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 80px;
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #f3f4f6;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            padding-top: 20px;
+            border-top: 1px solid #374151;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .tier-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .data-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-main {
+                display: none;
+            }
+            
+            .tier-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .data-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Institutional Header -->
+    <div class="institutional-header">
+        <div class="institutional-container">
+            <div class="institutional-logos">
+                <div>Texas Water Development Board</div>
+                <div class="logo-divider"></div>
+                <div>The University of Texas at Austin</div>
+                <div class="logo-divider"></div>
+                <div>Texas Advanced Computing Center</div>
+            </div>
+            <div style="font-size: 14px; color: #6b7280;">
+                Contract #2300012717
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">📊</div>
+                <div>
+                    <div class="logo-text">SUBSIDE</div>
+                    <div class="logo-subtitle">Subsidence System for Insight and Data Exploration</div>
+                </div>
+            </div>
+            
+            <nav class="nav-main">
+                <a href="#dashboard">Dashboard</a>
+                <a href="#data">Data Portal</a>
+                <a href="#maps">Interactive Maps</a>
+                <a href="#analysis">Analysis Tools</a>
+                <a href="#resources">Resources</a>
+                <a href="#api">API</a>
+            </nav>
+            
+            <div class="user-selector">
+                <button class="user-btn active" data-mode="public">Public</button>
+                <button class="user-btn" data-mode="professional">Professional</button>
+                <button class="user-btn" data-mode="technical">Technical</button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Texas Statewide Subsidence Information System</h1>
+            <p>Comprehensive monitoring, analysis, and decision support for land subsidence management across Texas. Access real-time data from GPS, InSAR, and groundwater monitoring networks.</p>
+        </div>
+    </section>
+    
+    <!-- Quick Access Bar -->
+    <div class="quick-access">
+        <div class="quick-access-container">
+            <div class="search-bar">
+                <input type="text" placeholder="Enter address, coordinates, or location name..." id="locationSearch">
+                <button onclick="searchLocation()">Search</button>
+            </div>
+            <div class="quick-tools">
+                <button class="tool-btn">📍 My Location</button>
+                <button class="tool-btn">📊 Quick Report</button>
+                <button class="tool-btn">❓ Help</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Interface Tiers Section -->
+        <section class="tier-section">
+            <h2>Select Your Access Level</h2>
+            <div class="tier-grid">
+                <!-- Public Interface -->
+                <div class="tier-card" data-tier="public">
+                    <div class="tier-icon">🏠</div>
+                    <h3>Public Interface</h3>
+                    <p>Simple, intuitive access to subsidence information for property owners, residents, and community members</p>
+                    <ul class="tier-features">
+                        <li>Address-based property search</li>
+                        <li>Visual subsidence rate indicators</li>
+                        <li>Educational resources and FAQs</li>
+                        <li>Property risk assessments</li>
+                        <li>Downloadable reports</li>
+                    </ul>
+                </div>
+                
+                <!-- Professional Dashboard -->
+                <div class="tier-card" data-tier="professional">
+                    <div class="tier-icon">💼</div>
+                    <h3>Professional Dashboard</h3>
+                    <p>Advanced tools for water managers, infrastructure operators, and planning professionals</p>
+                    <ul class="tier-features">
+                        <li>GIS integration capabilities</li>
+                        <li>Scenario modeling tools</li>
+                        <li>Regional trend analysis</li>
+                        <li>Infrastructure risk mapping</li>
+                        <li>Custom reporting tools</li>
+                    </ul>
+                </div>
+                
+                <!-- Technical Portal -->
+                <div class="tier-card" data-tier="technical">
+                    <div class="tier-icon">🔬</div>
+                    <h3>Technical Portal</h3>
+                    <p>Full data access and analytical capabilities for researchers, scientists, and developers</p>
+                    <ul class="tier-features">
+                        <li>Raw data downloads (GPS, InSAR)</li>
+                        <li>RESTful API endpoints</li>
+                        <li>Cloud computing resources</li>
+                        <li>Custom processing pipelines</li>
+                        <li>Comprehensive metadata</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Statistics Dashboard -->
+        <section class="stats-section">
+            <h2 style="margin-bottom: 25px; color: #1f2937;">Current System Status</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Active GPS Stations</div>
+                    <div class="stat-value">847</div>
+                    <div class="stat-change">↑ 12 added this month</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Coverage Area</div>
+                    <div class="stat-value">23</div>
+                    <div class="stat-change">Counties monitored</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Data Updates</div>
+                    <div class="stat-value">6-12</div>
+                    <div class="stat-change">Days (Sentinel-1)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Historical Data</div>
+                    <div class="stat-value">30+</div>
+                    <div class="stat-change">Years available</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Interactive Map -->
+        <section class="map-section">
+            <div class="map-header">
+                <h2>Interactive Subsidence Map</h2>
+                <div class="map-controls">
+                    <button class="tool-btn">🔍 Zoom</button>
+                    <button class="tool-btn">📏 Measure</button>
+                    <button class="tool-btn">📊 Layers</button>
+                    <button class="tool-btn">📥 Export</button>
+                </div>
+            </div>
+            <div class="map-placeholder">
+                <h3 style="color: #4b5563; font-size: 32px; margin-bottom: 20px;">🗺️</h3>
+                <p style="color: #6b7280; font-size: 18px;">Interactive Map Loading...</p>
+                <p style="color: #9ca3af; font-size: 14px; margin-top: 10px;">Click to explore subsidence data across Texas</p>
+            </div>
+        </section>
+        
+        <!-- Data Access Portal -->
+        <section class="data-portal">
+            <h2 style="margin-bottom: 20px; color: #1f2937;">Data Access Portal</h2>
+            <div class="data-tabs">
+                <button class="data-tab active">Real-Time Data</button>
+                <button class="data-tab">Historical Archives</button>
+                <button class="data-tab">Processed Products</button>
+                <button class="data-tab">API Documentation</button>
+            </div>
+            <div class="data-content">
+                <div class="data-item">
+                    <h4>🛰️ InSAR Data</h4>
+                    <p>Sentinel-1 interferometric data covering Texas with 6-12 day temporal resolution</p>
+                </div>
+                <div class="data-item">
+                    <h4>📍 GPS Networks</h4>
+                    <p>Continuous position measurements from 847 monitoring stations statewide</p>
+                </div>
+                <div class="data-item">
+                    <h4>💧 Groundwater Levels</h4>
+                    <p>Water level monitoring data from wells across major aquifer systems</p>
+                </div>
+                <div class="data-item">
+                    <h4>📏 Extensometer Data</h4>
+                    <p>High-precision compaction measurements from borehole extensometers</p>
+                </div>
+                <div class="data-item">
+                    <h4>🗺️ Geological Data</h4>
+                    <p>Subsurface geology and aquifer characterization datasets</p>
+                </div>
+                <div class="data-item">
+                    <h4>📊 Analysis Products</h4>
+                    <p>Pre-processed subsidence rate maps and time series analysis</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Data Resources</h3>
+                    <ul>
+                        <li><a href="#">Data Discovery</a></li>
+                        <li><a href="#">Download Portal</a></li>
+                        <li><a href="#">API Access</a></li>
+                        <li><a href="#">Metadata Standards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Tools & Analysis</h3>
+                    <ul>
+                        <li><a href="#">Web Services</a></li>
+                        <li><a href="#">Processing Tools</a></li>
+                        <li><a href="#">Visualization</a></li>
+                        <li><a href="#">Jupyter Notebooks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Documentation</h3>
+                    <ul>
+                        <li><a href="#">User Guides</a></li>
+                        <li><a href="#">Technical Specs</a></li>
+                        <li><a href="#">Best Practices</a></li>
+                        <li><a href="#">Training Materials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Report Issues</a></li>
+                        <li><a href="#">Community Forum</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>© 2025 SUBSIDE - Texas Water Development Board & The University of Texas at Austin</div>
+                <div>
+                    <a href="#" style="color: #9ca3af; margin-left: 20px;">Privacy Policy</a>
+                    <a href="#" style="color: #9ca3af; margin-left: 20px;">Terms of Use</a>
+                    <a href="#" style="color: #9ca3af; margin-left: 20px;">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Store current mode
+        let currentMode = 'public';
+        
+        // Mode-specific content configurations
+        const modeConfigs = {
+            public: {
+                hero: {
+                    title: 'Is Your Property Affected by Subsidence?',
+                    subtitle: 'Simple tools to check subsidence risk for your home or business. Get easy-to-understand information about ground movement in your area.'
+                },
+                searchPlaceholder: 'Enter your home address to check subsidence risk...',
+                stats: [
+                    { label: 'Properties Monitored', value: '250K+', change: 'Statewide coverage' },
+                    { label: 'Risk Level', value: 'Low', change: 'For most areas' },
+                    { label: 'Average Movement', value: '< 1 inch', change: 'Per year statewide' },
+                    { label: 'Last Updated', value: 'Today', change: 'Real-time monitoring' }
+                ],
+                tiers: {
+                    public: { show: true, title: 'For Residents', highlight: true },
+                    professional: { show: true, title: 'For Professionals', highlight: false },
+                    technical: { show: false }
+                },
+                navigation: ['Check My Property', 'Learn About Subsidence', 'FAQ', 'Get Help', 'Resources']
+            },
+            professional: {
+                hero: {
+                    title: 'Professional Subsidence Management Dashboard',
+                    subtitle: 'Advanced tools for water managers, infrastructure operators, and planning professionals. Access GIS integration, scenario modeling, and regional analysis.'
+                },
+                searchPlaceholder: 'Search by region, infrastructure ID, or coordinates...',
+                stats: [
+                    { label: 'Active GPS Stations', value: '847', change: '↑ 12 this month' },
+                    { label: 'InSAR Coverage', value: '98%', change: 'State coverage' },
+                    { label: 'Alert Zones', value: '7', change: '↓ 2 from last month' },
+                    { label: 'Data Latency', value: '< 24h', change: 'Near real-time' }
+                ],
+                tiers: {
+                    public: { show: false },
+                    professional: { show: true, title: 'Professional Tools', highlight: true },
+                    technical: { show: true, title: 'Technical Portal', highlight: false }
+                },
+                navigation: ['Dashboard', 'GIS Tools', 'Risk Analysis', 'Reports', 'Scenario Modeling', 'API']
+            },
+            technical: {
+                hero: {
+                    title: 'SUBSIDE Technical Data Portal',
+                    subtitle: 'Full access to raw GPS, InSAR, and groundwater datasets. RESTful APIs, cloud computing resources, and custom processing pipelines for researchers.'
+                },
+                searchPlaceholder: 'Query datasets: e.g., "InSAR 2024 Houston lat:29.7 lon:-95.3"',
+                stats: [
+                    { label: 'Total Datasets', value: '1.2PB', change: 'Growing daily' },
+                    { label: 'API Calls/Day', value: '45K+', change: '↑ 15% this week' },
+                    { label: 'Processing Jobs', value: '127', change: 'Active now' },
+                    { label: 'Jupyter Users', value: '342', change: 'This month' }
+                ],
+                tiers: {
+                    public: { show: false },
+                    professional: { show: false },
+                    technical: { show: true, title: 'Research Portal', highlight: true }
+                },
+                navigation: ['Data Catalog', 'API Docs', 'Jupyter Hub', 'Processing', 'Metadata', 'Downloads']
+            }
+        };
+        
+        // Update interface based on user mode
+        function updateInterfaceMode(mode) {
+            currentMode = mode;
+            const config = modeConfigs[mode];
+            
+            // Update hero section
+            const heroTitle = document.querySelector('.hero h1');
+            const heroSubtitle = document.querySelector('.hero p');
+            if (heroTitle) heroTitle.textContent = config.hero.title;
+            if (heroSubtitle) heroSubtitle.textContent = config.hero.subtitle;
+            
+            // Update search placeholder
+            const searchInput = document.getElementById('locationSearch');
+            if (searchInput) searchInput.placeholder = config.searchPlaceholder;
+            
+            // Update navigation
+            const navMain = document.querySelector('.nav-main');
+            if (navMain) {
+                navMain.innerHTML = config.navigation.map(item => 
+                    `<a href="#${item.toLowerCase().replace(/\s+/g, '-')}">${item}</a>`
+                ).join('');
+            }
+            
+            // Update statistics
+            const statCards = document.querySelectorAll('.stat-card');
+            statCards.forEach((card, index) => {
+                if (config.stats[index]) {
+                    const stat = config.stats[index];
+                    card.querySelector('.stat-label').textContent = stat.label;
+                    card.querySelector('.stat-value').textContent = stat.value;
+                    card.querySelector('.stat-change').textContent = stat.change;
+                }
+            });
+            
+            // Update tier cards visibility and content
+            const tierCards = document.querySelectorAll('.tier-card');
+            tierCards.forEach(card => {
+                const tierType = card.dataset.tier;
+                const tierConfig = config.tiers[tierType];
+                
+                if (tierConfig) {
+                    if (tierConfig.show) {
+                        card.style.display = 'block';
+                        if (tierConfig.title) {
+                            const h3 = card.querySelector('h3');
+                            if (tierType === 'public') {
+                                h3.textContent = tierConfig.title;
+                                card.querySelector('p').textContent = mode === 'public' ? 
+                                    'Get started with easy-to-use tools designed for homeowners and residents' :
+                                    'Simple interface for general public users';
+                            } else if (tierType === 'professional') {
+                                h3.textContent = tierConfig.title;
+                                card.querySelector('p').textContent = mode === 'professional' ?
+                                    'Access your complete suite of professional subsidence management tools' :
+                                    'Advanced dashboard for water managers and planners';
+                            } else if (tierType === 'technical') {
+                                h3.textContent = tierConfig.title;
+                                card.querySelector('p').textContent = 'Complete data access, APIs, and computational resources';
+                            }
+                        }
+                        // Add highlight for current mode's primary tier
+                        if (tierConfig.highlight) {
+                            card.style.borderColor = 'var(--tacc-light-blue)';
+                            card.style.background = 'linear-gradient(135deg, rgba(0, 132, 180, 0.05), rgba(0, 132, 180, 0.02))';
+                        } else {
+                            card.style.borderColor = '#e5e7eb';
+                            card.style.background = 'white';
+                        }
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+            
+            // Update tier section title based on mode
+            const tierSectionTitle = document.querySelector('.tier-section h2');
+            if (tierSectionTitle) {
+                if (mode === 'public') {
+                    tierSectionTitle.textContent = 'How Can We Help You?';
+                } else if (mode === 'professional') {
+                    tierSectionTitle.textContent = 'Professional Tools & Services';
+                } else {
+                    tierSectionTitle.textContent = 'Technical Data Access';
+                }
+            }
+            
+            // Update data portal visibility and content
+            const dataPortal = document.querySelector('.data-portal');
+            if (dataPortal) {
+                const portalTitle = dataPortal.querySelector('h2');
+                if (mode === 'public') {
+                    portalTitle.textContent = 'Understanding Subsidence Data';
+                    // Simplify data tabs for public
+                    const dataTabs = dataPortal.querySelector('.data-tabs');
+                    dataTabs.innerHTML = `
+                        <button class="data-tab active">What We Monitor</button>
+                        <button class="data-tab">How It Works</button>
+                        <button class="data-tab">Your Area</button>
+                    `;
+                } else if (mode === 'professional') {
+                    portalTitle.textContent = 'Data Integration Portal';
+                    const dataTabs = dataPortal.querySelector('.data-tabs');
+                    dataTabs.innerHTML = `
+                        <button class="data-tab active">GIS Layers</button>
+                        <button class="data-tab">Time Series</button>
+                        <button class="data-tab">Risk Models</button>
+                        <button class="data-tab">Export Tools</button>
+                    `;
+                } else {
+                    portalTitle.textContent = 'Research Data Repository';
+                    const dataTabs = dataPortal.querySelector('.data-tabs');
+                    dataTabs.innerHTML = `
+                        <button class="data-tab active">Raw Datasets</button>
+                        <button class="data-tab">Processing Queue</button>
+                        <button class="data-tab">API Endpoints</button>
+                        <button class="data-tab">Cloud Resources</button>
+                    `;
+                }
+                
+                // Re-attach tab listeners after updating
+                attachTabListeners();
+            }
+            
+            // Update quick tools based on mode
+            const quickTools = document.querySelector('.quick-tools');
+            if (quickTools) {
+                if (mode === 'public') {
+                    quickTools.innerHTML = `
+                        <button class="tool-btn">📍 My Location</button>
+                        <button class="tool-btn">📄 Get Report</button>
+                        <button class="tool-btn">❓ Help</button>
+                    `;
+                } else if (mode === 'professional') {
+                    quickTools.innerHTML = `
+                        <button class="tool-btn">📊 Analytics</button>
+                        <button class="tool-btn">⚠️ Alerts</button>
+                        <button class="tool-btn">📥 Export</button>
+                        <button class="tool-btn">⚙️ Settings</button>
+                    `;
+                } else {
+                    quickTools.innerHTML = `
+                        <button class="tool-btn">🔌 API Keys</button>
+                        <button class="tool-btn">💻 Jupyter</button>
+                        <button class="tool-btn">⚡ Jobs</button>
+                        <button class="tool-btn">📚 Docs</button>
+                    `;
+                }
+            }
+            
+            console.log(`Interface updated to ${mode} mode`);
+        }
+        
+        // Attach tab listeners
+        function attachTabListeners() {
+            document.querySelectorAll('.data-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.data-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        }
+        
+        // User mode selector
+        document.querySelectorAll('.user-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.user-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                updateInterfaceMode(this.dataset.mode);
+            });
+        });
+        
+        // Tier card interactions
+        document.querySelectorAll('.tier-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const tier = this.dataset.tier;
+                alert(`Opening ${tier} interface...\nThis would navigate to the ${tier} portal in the production system.`);
+            });
+        });
+        
+        // Search functionality
+        function searchLocation() {
+            const query = document.getElementById('locationSearch').value;
+            if (!query) {
+                alert('Please enter a location to search');
+                return;
+            }
+            
+            if (currentMode === 'public') {
+                alert(`Checking subsidence risk for: ${query}\n\nThis would show:\n• Property-specific subsidence rate\n• Risk assessment (Low/Medium/High)\n• Historical trends\n• Recommendations`);
+            } else if (currentMode === 'professional') {
+                alert(`Analyzing region: ${query}\n\nThis would display:\n• Infrastructure impact assessment\n• Regional subsidence patterns\n• Groundwater correlation data\n• Planning recommendations`);
+            } else {
+                alert(`Executing data query: ${query}\n\nThis would return:\n• Raw GPS/InSAR datasets\n• Processing parameters\n• Metadata records\n• API response format`);
+            }
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            attachTabListeners();
+            updateInterfaceMode('public'); // Start in public mode
+            console.log('SUBSIDE Interface initialized successfully');
+        });
+        
+        // Make searchLocation available globally
+        window.searchLocation = searchLocation;
+    </script>
+</body>
+</html>
