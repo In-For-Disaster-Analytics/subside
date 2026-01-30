@@ -29,4 +29,8 @@
 
   }
 
- 
+
+.md-typeset .admonition {
+  max-width: 90%; /* Adjust this value as needed */
+  margin-inline: auto; Centers the admonition if max-width is set
+}

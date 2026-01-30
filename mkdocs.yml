@@ -1,5 +1,5 @@
 # Project Information
-site_name: Subside
+site_name: Subsidence System for Insight and Data Exploration
 site_url: https://in-for-disaster-analytics.github.io/subside/
 site_author: UT Austin DSO Team
 site_description:  >-
@@ -11,7 +11,8 @@ repo_url: https://github.com/In-For-Disaster-Analytics/subside
 
 # Configuration
 theme:
-  logo: https://cdn.jsdelivr.net/gh/TACC/Core-CMS-Custom@813aa7c/ptdatax_assets/logo.png
+  logo: assets/pt2050/pillar1.svg 
+  # https://cdn.jsdelivr.net/gh/TACC/Core-CMS-Custom@813aa7c/ptdatax_assets/logo.png
   name: material
   custom_dir: overrides
   features:
@@ -76,6 +77,7 @@ markdown_extensions:
   - md_in_html
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.blocks.html
   - pymdownx.critic
   - pymdownx.caret
   - pymdownx.emoji:
@@ -110,13 +112,13 @@ plugins:
       sort_type: natural
       # order_by: title
   # - mkdocs-pdf
-  - multirepo:
-      # (optional) tells multirepo to cleanup the temporary directory after site is built.
-      cleanup: true
-      # if set the docs directory will not be removed when importing docs.
-      # When using this with a nav section in an imported repo you must keep the
-      # docs directory in the path (e.g., docs/path/to/file.md).
-      keep_docs_dir: true
+  # - multirepo:
+  #     # (optional) tells multirepo to cleanup the temporary directory after site is built.
+  #     cleanup: true
+  #     # if set the docs directory will not be removed when importing docs.
+  #     # When using this with a nav section in an imported repo you must keep the
+  #     # docs directory in the path (e.g., docs/path/to/file.md).
+  #     keep_docs_dir: true
   - privacy:
       assets: false
       external_links_attr_map:

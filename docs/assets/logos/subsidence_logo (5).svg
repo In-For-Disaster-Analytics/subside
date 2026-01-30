@@ -1,0 +1,114 @@
+<svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Transparent background -->
+  
+  <defs>
+    <!-- Text shadow filter -->
+    <filter id="textShadow">
+      <feDropShadow dx="3" dy="3" stdDeviation="4" flood-opacity="0.4"/>
+    </filter>
+    
+    <!-- Glow effect for layers -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Letter gradients with subsidence colors -->
+    <linearGradient id="letterGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#003366;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00CED1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#003366;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="letterGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00CED1;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#F0C829;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00CED1;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="letterGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F0C829;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#E67E22;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F0C829;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="letterGrad4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E67E22;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#B22222;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E67E22;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Chevron layer gradients with overlap effect -->
+    <linearGradient id="layer1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#003366;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#003366;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00CED1;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#003366;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#003366;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="layer2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#003366;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#003366;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#F0C829;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#003366;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#003366;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="layer3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#003366;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#003366;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#E67E22;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#003366;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#003366;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="layer4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#003366;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#003366;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#B22222;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#003366;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#003366;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main text "SUBSIDE" with dramatic positioning -->
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" 
+     font-size="72" font-weight="700" filter="url(#textShadow)">
+    <text x="50" y="80" fill="url(#letterGrad1)">S</text>
+    <text x="115" y="75" fill="url(#letterGrad1)">U</text>
+    <text x="185" y="85" fill="url(#letterGrad2)">B</text>
+    <text x="255" y="95" fill="url(#letterGrad3)">S</text>
+    <text x="315" y="90" fill="url(#letterGrad3)">I</text>
+    <text x="355" y="80" fill="url(#letterGrad2)">D</text>
+    <text x="425" y="75" fill="url(#letterGrad1)">E</text>
+  </g>
+  
+  <!-- Stratigraphic chevron layers below with varied thickness -->
+  <g transform="translate(80, 110)" filter="url(#glow)">
+    <!-- Layer 1 - Thin top layer -->
+    <path d="M -10 0 L 0 0 L 200 45 L 400 0 L 410 0 L 410 4 L 400 4 L 200 49 L 0 4 L -10 4 Z" 
+          fill="url(#layer1)" opacity="0.9"/>
+    
+    <!-- Layer 2 - Thick layer -->
+    <path d="M -10 8 L 0 8 L 200 58 L 400 8 L 410 8 L 410 20 L 400 20 L 200 70 L 0 20 L -10 20 Z" 
+          fill="url(#layer2)" opacity="0.85"/>
+    
+    <!-- Layer 3 - Medium layer -->
+    <path d="M -10 24 L 0 24 L 200 78 L 400 24 L 410 24 L 410 34 L 400 34 L 200 88 L 0 34 L -10 34 Z" 
+          fill="url(#layer3)" opacity="0.8"/>
+    
+    <!-- Layer 4 - Thick bottom layer -->
+    <path d="M -10 38 L 0 38 L 200 96 L 400 38 L 410 38 L 410 52 L 400 52 L 200 110 L 0 52 L -10 52 Z" 
+          fill="url(#layer4)" opacity="0.75"/>
+  </g>
+  
+  <!-- Accent lines showing subsidence direction -->
+  <g opacity="0.3" stroke="#00CED1" stroke-width="1" fill="none" stroke-dasharray="4,4">
+    <line x1="280" y1="30" x2="280" y2="140"/>
+    <line x1="340" y1="30" x2="320" y2="140"/>
+  </g>
+</svg>

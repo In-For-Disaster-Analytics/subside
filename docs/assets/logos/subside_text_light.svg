@@ -1,0 +1,86 @@
+<svg viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Black background for visibility -->
+  <rect width="400" height="150" fill="#000000"/>
+  
+  <!-- Text "SUBSIDE" with gradient shading optimized for black background -->
+  <defs>
+    <filter id="textShadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+    
+    <!-- Gradient for S - Semi-transparent white with turquoise center -->
+    <linearGradient id="letterS1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+      <stop offset="40%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+      <stop offset="50%" style="stop-color:#00CED1;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+    </linearGradient>
+    
+    <!-- Gradient for U - Semi-transparent white with turquoise center -->
+    <linearGradient id="letterU" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+      <stop offset="40%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+      <stop offset="50%" style="stop-color:#00CED1;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+    </linearGradient>
+    
+    <!-- Gradient for B - Semi-transparent white with yellow center -->
+    <linearGradient id="letterB" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+      <stop offset="40%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+      <stop offset="50%" style="stop-color:#F0C829;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+    </linearGradient>
+    
+    <!-- Gradient for S2 - Semi-transparent white with orange center -->
+    <linearGradient id="letterS2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+      <stop offset="40%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+      <stop offset="50%" style="stop-color:#E67E22;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+    </linearGradient>
+    
+    <!-- Gradient for I - Semi-transparent white with red center -->
+    <linearGradient id="letterI" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+      <stop offset="40%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+      <stop offset="50%" style="stop-color:#B22222;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+    </linearGradient>
+    
+    <!-- Gradient for D - Semi-transparent white with orange center -->
+    <linearGradient id="letterD" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+      <stop offset="40%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+      <stop offset="50%" style="stop-color:#E67E22;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+    </linearGradient>
+    
+    <!-- Gradient for E - Semi-transparent white with turquoise center -->
+    <linearGradient id="letterE" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+      <stop offset="40%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+      <stop offset="50%" style="stop-color:#00CED1;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0.5" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Individual letters with gradient fills, all on same level -->
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" 
+     font-size="56" font-weight="700" filter="url(#textShadow)">
+    <text x="50" y="90" fill="url(#letterS1)">S</text>
+    <text x="90" y="90" fill="url(#letterU)">U</text>
+    <text x="130" y="90" fill="url(#letterB)">B</text>
+    <text x="170" y="90" fill="url(#letterS2)">S</text>
+    <text x="205" y="90" fill="url(#letterI)">I</text>
+    <text x="230" y="90" fill="url(#letterD)">D</text>
+    <text x="275" y="90" fill="url(#letterE)">E</text>
+  </g>
+</svg>
