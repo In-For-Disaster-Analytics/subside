@@ -1,0 +1,1018 @@
+<!-- Elements added to "main.html" will be displayed on all pages -->
+ 
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Website for the Subside Project">
+      
+      
+        <meta name="author" content="UT Austin DSO Team">
+      
+      
+        <link rel="canonical" href="https://in-for-disaster-analytics.github.io/subside/data-discovery/twdb/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../products/">
+      
+      
+      <link rel="icon" href="https://cdn.jsdelivr.net/gh/TACC/Core-CMS-Custom@813aa7c/ptdatax_assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>Twdb - Subsidence System for Insight and Data Exploration</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a40c8224.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family='Benton+Sans',+'Open+Sans':300,300i,400,400i,700,700i%7CRoboto:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"'Benton Sans', 'Open Sans'";--md-code-font:"Roboto"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/tacc.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      <!--
+  Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine classes -->
+
+
+  
+
+
+<!-- Header -->
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="Header"
+  >
+
+    <!-- Link to home -->
+    <a
+      href="../.."
+      title="Subsidence System for Insight and Data Exploration"
+      class="md-header__button md-logo"
+      aria-label="Subsidence System for Insight and Data Exploration"
+      data-md-component="logo"
+    >
+      
+  <img src="../../assets/pt2050/pillar1.svg" alt="logo">
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Subsidence System for Insight and Data Exploration
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Twdb
+            
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    <!-- Color palette toggle -->
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+
+    <!-- User preference: color palette -->    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+
+    <!-- Site language selector -->
+    
+
+
+
+    <!-- Repository information -->
+    <!-- Removed -->
+  </nav>
+
+  <!-- Navigation tabs (sticky) -->
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+    
+  
+  Data Discovery
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../training/" class="md-tabs__link">
+        
+  
+    
+  
+  Training
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../products/" class="md-tabs__link">
+          
+  
+    
+  
+  Products & Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Subsidence System for Insight and Data Exploration" class="md-nav__button md-logo" aria-label="Subsidence System for Insight and Data Exploration" data-md-component="logo">
+      
+  <img src="../../assets/pt2050/pillar1.svg" alt="logo">
+
+    </a>
+    Subsidence System for Insight and Data Exploration
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/In-For-Disaster-Analytics/subside" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    In-For-Disaster-Analytics/subside
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Discovery
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../training/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Training
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../products/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Products & Resources
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Products & Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/H3_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    H3 Population Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/gmdsi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Groundwater Modeling Decision Support Initiative
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/houston_compaction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Houston Compaction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/subside_interface_demo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SUBSIDE Interface Portal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/texas_subsidence_resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Texas Subsidence Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+                  
+
+  
+  
+
+
+  <h1>Twdb</h1>
+
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th></th>
+<th>Geodatabase</th>
+<th>Model_File</th>
+<th>Model_Grid</th>
+<th>Other_Data</th>
+<th>Report</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blossom_Aquifer_GAM</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Blossom_Aquifer_GAM/Geodatabase/blsm_geodatabase.7z">blsm_geodatabase.7z</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Blossom_Aquifer_GAM/Model_File/blsm_model_v1.01.7z">blsm_model_v1.01.7z</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Blossom_Aquifer_GAM/Model_Grid/blsm_grid.zip">blsm_grid.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Blossom_Aquifer_GAM/Other_Data/BlossomModelReport_Final_012422.pdf">BlossomModelReport_Final_012422.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Blossom_Aquifer_GAM/Other_Data/Blossom_ConceptualModel_Final_012422.pdf">Blossom_ConceptualModel_Final_012422.pdf</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Bone_Spring-Victorio_Peak_Aquifer_GAM</td>
+<td></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Bone_Spring-Victorio_Peak_Aquifer_GAM/Model_File/bsvp_model_report.zip">bsvp_model_report.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Bone_Spring-Victorio_Peak_Aquifer_GAM/Model_Grid/bsvp_grid.zip">bsvp_grid.zip</a></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Bone_Spring-Victorio_Peak_Aquifer_GAM/Report/bsvp_report.pdf">bsvp_report.pdf</a></td>
+</tr>
+<tr>
+<td>Brazos_River_Alluvium_Aquifer_GAM</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Brazos_River_Alluvium_Aquifer_GAM/Geodatabase/BRAA101_02_Geodatabase.zipx">BRAA101_02_Geodatabase.zipx</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Brazos_River_Alluvium_Aquifer_GAM/Model_File/BRAA101_01_Model_Report.zipx">BRAA101_01_Model_Report.zipx</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Brazos_River_Alluvium_Aquifer_GAM/Model_Grid/bra_grid.zip">bra_grid.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Brazos_River_Alluvium_Aquifer_GAM/Other_Data/BRAA101_03_Layer3_Predictive_Tool.zipx">BRAA101_03_Layer3_Predictive_Tool.zipx</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Brazos_River_Alluvium_Aquifer_GAM/Other_Data/Brazos_River_Alluvium_Structure.zip">Brazos_River_Alluvium_Structure.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Brazos_River_Alluvium_Aquifer_GAM/Report/BRAA_AQUIFER_GAM_REPORT_ALL.PDF">BRAA_AQUIFER_GAM_REPORT_ALL.PDF</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Brazos_River_Alluvium_Aquifer_GAM/Report/BRAA_NM_REPORT_FINAL.pdf">BRAA_NM_REPORT_FINAL.pdf</a></td>
+</tr>
+<tr>
+<td>Capitan_Reef_Complex_Aquifer_GAM</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Capitan_Reef_Complex_Aquifer_GAM/Geodatabase/Capitan_Reef_Complex_Aquifer_Geodatabase.zipx">Capitan_Reef_Complex_Aquifer_Geodatabase.zipx</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Capitan_Reef_Complex_Aquifer_GAM/Model_File/Capitan_Reef_Complex_Aquifer_GAM_Model_Report.zipx">Capitan_Reef_Complex_Aquifer_GAM_Model_Report.zipx</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Capitan_Reef_Complex_Aquifer_GAM/Model_Grid/crcx_grid.zip">crcx_grid.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Capitan_Reef_Complex_Aquifer_GAM/Other_Data/Capitan_Reef_Complex_Framework.zip">Capitan_Reef_Complex_Framework.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Capitan_Reef_Complex_Aquifer_GAM/Report/CapitanModelReportFinal.pdf">CapitanModelReportFinal.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Capitan_Reef_Complex_Aquifer_GAM/Report/ConceptualModelReport_Final.pdf">ConceptualModelReport_Final.pdf</a></td>
+</tr>
+<tr>
+<td>Carrizo-Wilcox_Aquifer_central_portion_GAM_version_3.02</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Carrizo-Wilcox_Aquifer_central_portion_GAM_version_3.02/Geodatabase/GMA12_Mod_Geodatabase.7z">GMA12_Mod_Geodatabase.7z</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Carrizo-Wilcox_Aquifer_central_portion_GAM_version_3.02/Model_File/czwx_c_qcsp_v3.02_model_files.zip">czwx_c_qcsp_v3.02_model_files.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Carrizo-Wilcox_Aquifer_central_portion_GAM_version_3.02/Model_Grid/czwx_v3_02_MFUSG_ModelGrid.zip">czwx_v3_02_MFUSG_ModelGrid.zip</a></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Carrizo-Wilcox_Aquifer_central_portion_GAM_version_3.02/Report/Memo_ComparisonAnalysisReport.pdf">Memo_ComparisonAnalysisReport.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Carrizo-Wilcox_Aquifer_central_portion_GAM_version_3.02/Report/PE_Report_GMA12_final_october_2020_merge.pdf">PE_Report_GMA12_final_october_2020_merge.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Carrizo-Wilcox_Aquifer_central_portion_GAM_version_3.02/Report/Updated_CWQCSP_GAM_vol1_all.pdf">Updated_CWQCSP_GAM_vol1_all.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Carrizo-Wilcox_Aquifer_central_portion_GAM_version_3.02/Report/Updated_CWQCSP_GAM_vol2_all.pdf">Updated_CWQCSP_GAM_vol2_all.pdf</a></td>
+</tr>
+<tr>
+<td>Carrizo-Wilcox_Aquifer_northern_portion_GAM_version_3.01</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Carrizo-Wilcox_Aquifer_northern_portion_GAM_version_3.01/Geodatabase/czwx_n_qcsp_v3.01_data.7z">czwx_n_qcsp_v3.01_data.7z</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Carrizo-Wilcox_Aquifer_northern_portion_GAM_version_3.01/Model_File/czwx_n_qcsp_v3.01.7z">czwx_n_qcsp_v3.01.7z</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Carrizo-Wilcox_Aquifer_northern_portion_GAM_version_3.01/Model_Grid/czwx_n_qcsp_v3_01_grid.zip">czwx_n_qcsp_v3_01_grid.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Carrizo-Wilcox_Aquifer_northern_portion_GAM_version_3.01/Other_Data/czwx_n_qcsp_v3.01_leapfrog.7z">czwx_n_qcsp_v3.01_leapfrog.7z</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Carrizo-Wilcox_Aquifer_northern_portion_GAM_version_3.01/Report/2020_12_08_Numerical_Model_Report_Accessible.pdf">2020_12_08_Numerical_Model_Report_Accessible.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Carrizo-Wilcox_Aquifer_northern_portion_GAM_version_3.01/Report/Appendices_A_and_B.pdf">Appendices_A_and_B.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Carrizo-Wilcox_Aquifer_northern_portion_GAM_version_3.01/Report/Appendices_C_to_H.pdf">Appendices_C_to_H.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Carrizo-Wilcox_Aquifer_northern_portion_GAM_version_3.01/Report/North_QCSCW_GAM_Conceptual_Model_Report_FullRpt_Appendices.pdf">North_QCSCW_GAM_Conceptual_Model_Report_FullRpt_Appendices.pdf</a></td>
+</tr>
+<tr>
+<td>Carrizo-Wilcox_Aquifer_southern_portion_GAM_version_3.01</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Carrizo-Wilcox_Aquifer_southern_portion_GAM_version_3.01/Geodatabase/crwx_s_qcsp_v3.01_Geodatabases.7z">crwx_s_qcsp_v3.01_Geodatabases.7z</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Carrizo-Wilcox_Aquifer_southern_portion_GAM_version_3.01/Model_File/czwx_s_qcsp_v3.01_ModelFIles.7z">czwx_s_qcsp_v3.01_ModelFIles.7z</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Carrizo-Wilcox_Aquifer_southern_portion_GAM_version_3.01/Model_Grid/czwx_s_qcsp_v3_01_grid.zip">czwx_s_qcsp_v3_01_grid.zip</a></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Carrizo-Wilcox_Aquifer_southern_portion_GAM_version_3.01/Report/South QCSCW ConceptualModelRpt_Final.pdf">South QCSCW ConceptualModelRpt_Final.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Carrizo-Wilcox_Aquifer_southern_portion_GAM_version_3.01/Report/South_QCSCW_ModelRpt_Final_w_appendicies.pdf">South_QCSCW_ModelRpt_Final_w_appendicies.pdf</a></td>
+</tr>
+<tr>
+<td>Cross_Timbers_Aquifer_GAM</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Cross_Timbers_Aquifer_GAM/Geodatabase/Cross_Timbers_CM_Geodatabase_Sept2021.gdb.7z">Cross_Timbers_CM_Geodatabase_Sept2021.gdb.7z</a></td>
+<td></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Cross_Timbers_Aquifer_GAM/Other_Data/CrossTimbers_Leapfrog.7z">CrossTimbers_Leapfrog.7z</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Cross_Timbers_Aquifer_GAM/Report/1948312322.pdf">1948312322.pdf</a></td>
+</tr>
+<tr>
+<td>Edwards-Trinity_Plateau_and_Pecos_Valley_aquifers_GAM</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Edwards-Trinity_Plateau_and_Pecos_Valley_aquifers_GAM/Geodatabase/eddt_p_source_data.gdb.7z">eddt_p_source_data.gdb.7z</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Edwards-Trinity_Plateau_and_Pecos_Valley_aquifers_GAM/Model_File/Edwards_Trinity_Plateau_Model_Only.zip">Edwards_Trinity_Plateau_Model_Only.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Edwards-Trinity_Plateau_and_Pecos_Valley_aquifers_GAM/Model_Grid/eddt_p_grid.zip">eddt_p_grid.zip</a></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Edwards-Trinity_Plateau_and_Pecos_Valley_aquifers_GAM/Report/ET-Plateau_Full.pdf">ET-Plateau_Full.pdf</a></td>
+</tr>
+<tr>
+<td>Edwards_BFZ_Aquifer_Barton_Springs_Segment_GAM</td>
+<td></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Edwards_BFZ_Aquifer_Barton_Springs_Segment_GAM/Model_File/Edwards_BFZ_Barton_Springs.zip">Edwards_BFZ_Barton_Springs.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Edwards_BFZ_Aquifer_Barton_Springs_Segment_GAM/Model_Grid/ebfz_b_grid.zip">ebfz_b_grid.zip</a></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Edwards_BFZ_Aquifer_Barton_Springs_Segment_GAM/Report/EBFZ_B_Model_Report.pdf">EBFZ_B_Model_Report.pdf</a></td>
+</tr>
+<tr>
+<td>Edwards_BFZ_Aquifer_Northern_Segment_GAM</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Edwards_BFZ_Aquifer_Northern_Segment_GAM/Geodatabase/ebfz_n_Geodatabase.zip">ebfz_n_Geodatabase.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Edwards_BFZ_Aquifer_Northern_Segment_GAM/Model_File/ebfz_n_v201_ModelFiles.zip">ebfz_n_v201_ModelFiles.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Edwards_BFZ_Aquifer_Northern_Segment_GAM/Model_Grid/ebfz_n_grid_v2_01.zip">ebfz_n_grid_v2_01.zip</a></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Edwards_BFZ_Aquifer_Northern_Segment_GAM/Report/EBFZN_ModelReportFinal_v2.pdf">EBFZN_ModelReportFinal_v2.pdf</a></td>
+</tr>
+<tr>
+<td>Edwards_BFZ_Aquifer_San_Antonio_Segment_GAM</td>
+<td></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Edwards_BFZ_Aquifer_San_Antonio_Segment_GAM/Model_File/Edwards_BFZ_San_Antonio_GWSIM.zip">Edwards_BFZ_San_Antonio_GWSIM.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Edwards_BFZ_Aquifer_San_Antonio_Segment_GAM/Model_Grid/ebfz_s_grid.zip">ebfz_s_grid.zip</a></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Edwards_BFZ_Aquifer_San_Antonio_Segment_GAM/Report/CPM-GWSIM.pdf">CPM-GWSIM.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Edwards_BFZ_Aquifer_San_Antonio_Segment_GAM/Report/R340.pdf">R340.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Edwards_BFZ_Aquifer_San_Antonio_Segment_GAM/Report/USGS_SIR2004-5277.pdf">USGS_SIR2004-5277.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Edwards_BFZ_Aquifer_San_Antonio_Segment_GAM/Report/USGS_SIR2004-5277plates_1_3.pdf">USGS_SIR2004-5277plates_1_3.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Edwards_BFZ_Aquifer_San_Antonio_Segment_GAM/Report/USGS_SIR2004-5277plates_4_7.pdf">USGS_SIR2004-5277plates_4_7.pdf</a></td>
+</tr>
+<tr>
+<td>GMA_16_groundwater_flow_model</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/GMA_16_groundwater_flow_model/Geodatabase/glfc_gma16_ancillary_data.zipx">glfc_gma16_ancillary_data.zipx</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/GMA_16_groundwater_flow_model/Model_File/GMA16_Draft_Model.zip">GMA16_Draft_Model.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/GMA_16_groundwater_flow_model/Model_Grid/gma16_grid.zip">gma16_grid.zip</a></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/GMA_16_groundwater_flow_model/Report/GMA16_Model_Report_DRAFT.pdf">GMA16_Model_Report_DRAFT.pdf</a></td>
+</tr>
+<tr>
+<td>Gulf_Coast_Aquifer_System_central_and_southern_portions_GAM</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Gulf_Coast_Aquifer_System_central_and_southern_portions_GAM/Geodatabase/glfc_c_s_Numerical_Model.gdb.7z">glfc_c_s_Numerical_Model.gdb.7z</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Gulf_Coast_Aquifer_System_central_and_southern_portions_GAM/Model_File/July19_glfc_c_s_ModelFiles.7z">July19_glfc_c_s_ModelFiles.7z</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Gulf_Coast_Aquifer_System_central_and_southern_portions_GAM/Model_Grid/glfc_c_s_grid.zip">glfc_c_s_grid.zip</a></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Gulf_Coast_Aquifer_System_central_and_southern_portions_GAM/Report/Central_Southern_Gulf_Coast_Aquifer_System_Conceptual_Model_Report_Final.pdf">Central_Southern_Gulf_Coast_Aquifer_System_Conceptual_Model_Report_Final.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Gulf_Coast_Aquifer_System_central_and_southern_portions_GAM/Report/Central_Southern_Gulf_Coast_Aquifer_System_Numerical_Model_Report.pdf">Central_Southern_Gulf_Coast_Aquifer_System_Numerical_Model_Report.pdf</a></td>
+</tr>
+<tr>
+<td>Gulf_Coast_Aquifer_System_northern_portion_GAM</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Gulf_Coast_Aquifer_System_northern_portion_GAM/Geodatabase/glfc_n_v4.01_GULF2023_geodatabase.7z">glfc_n_v4.01_GULF2023_geodatabase.7z</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Gulf_Coast_Aquifer_System_northern_portion_GAM/Model_File/glfc_n_v4.01_GULF2023_baseModelFiles.7z">glfc_n_v4.01_GULF2023_baseModelFiles.7z</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Gulf_Coast_Aquifer_System_northern_portion_GAM/Model_File/pp1877">pp1877</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Gulf_Coast_Aquifer_System_northern_portion_GAM/Model_Grid/glfc_n_v4.01_GULF2023_modelGrid.7z">glfc_n_v4.01_GULF2023_modelGrid.7z</a></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Gulf_Coast_Aquifer_System_northern_portion_GAM/Report/Appendix A Stakeholder Comments.pdf">Appendix A Stakeholder Comments.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Gulf_Coast_Aquifer_System_northern_portion_GAM/Report/pp1877">pp1877</a></td>
+</tr>
+<tr>
+<td>High_Plains_Aquifer_System_GAM</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/High_Plains_Aquifer_System_GAM/Geodatabase/hpas_ext_geodatabase_05_2025.zip">hpas_ext_geodatabase_05_2025.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/High_Plains_Aquifer_System_GAM/Model_File/hpas_ext_model_05_2025.zip">hpas_ext_model_05_2025.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/High_Plains_Aquifer_System_GAM/Model_Grid/hpas_grid.zip">hpas_grid.zip</a></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/High_Plains_Aquifer_System_GAM/Report/HPAS_GAM_Conceptual_Report.pdf">HPAS_GAM_Conceptual_Report.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/High_Plains_Aquifer_System_GAM/Report/HPAS_GAM_Numerical_Report.pdf">HPAS_GAM_Numerical_Report.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/High_Plains_Aquifer_System_GAM/Report/hpas_ext_report_appendixF.pdf">hpas_ext_report_appendixF.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/High_Plains_Aquifer_System_GAM/Report/hpas_report_final_June2025.pdf">hpas_report_final_June2025.pdf</a></td>
+</tr>
+<tr>
+<td>Hueco_Bolsons_Aquifer_GAM</td>
+<td></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Hueco_Bolsons_Aquifer_GAM/Model_File/Hueco_Bolson_Model_Only.zip">Hueco_Bolson_Model_Only.zip</a></td>
+<td></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Hueco_Bolsons_Aquifer_GAM/Report/HMBL_Hueco_Documentation.pdf">HMBL_Hueco_Documentation.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Hueco_Bolsons_Aquifer_GAM/Report/WRIR02-4108.pdf">WRIR02-4108.pdf</a></td>
+</tr>
+<tr>
+<td>Igneous_and_West_Texas_Bolsons_Wild_Horse_Flat_Michigan_Flat_Ryan_Flat_and_Lobo_Flat_aquifers_GAM</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Igneous_and_West_Texas_Bolsons_Wild_Horse_Flat_Michigan_Flat_Ryan_Flat_and_Lobo_Flat_aquifers_GAM/Geodatabase/Igneous_WTBL.zip">Igneous_WTBL.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Igneous_and_West_Texas_Bolsons_Wild_Horse_Flat_Michigan_Flat_Ryan_Flat_and_Lobo_Flat_aquifers_GAM/Model_File/Igneous_WTBL_Model_Only.zip">Igneous_WTBL_Model_Only.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Igneous_and_West_Texas_Bolsons_Wild_Horse_Flat_Michigan_Flat_Ryan_Flat_and_Lobo_Flat_aquifers_GAM/Model_Grid/igbl_grid.zip">igbl_grid.zip</a></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Igneous_and_West_Texas_Bolsons_Wild_Horse_Flat_Michigan_Flat_Ryan_Flat_and_Lobo_Flat_aquifers_GAM/Report/IGBL_Model_Report.pdf">IGBL_Model_Report.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Igneous_and_West_Texas_Bolsons_Wild_Horse_Flat_Michigan_Flat_Ryan_Flat_and_Lobo_Flat_aquifers_GAM/Report/IGBL_Quick_Reference.pdf">IGBL_Quick_Reference.pdf</a></td>
+</tr>
+<tr>
+<td>Kinney_County_model</td>
+<td></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Kinney_County_model/Model_File/Kinney_County_Model.zip">Kinney_County_Model.zip</a></td>
+<td></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Kinney_County_model/Report/Kinney_County_Model_Report.pdf">Kinney_County_Model_Report.pdf</a></td>
+</tr>
+<tr>
+<td>Lipan_Aquifer_GAM</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Lipan_Aquifer_GAM/Geodatabase/Lipan.zip">Lipan.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Lipan_Aquifer_GAM/Model_File/Lipan_Model_Only.zip">Lipan_Model_Only.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Lipan_Aquifer_GAM/Model_Grid/lipn_grid.zip">lipn_grid.zip</a></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Lipan_Aquifer_GAM/Report/LIPN_Model_Report.pdf">LIPN_Model_Report.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Lipan_Aquifer_GAM/Report/LIPN_Quick_Reference_091809.pdf">LIPN_Quick_Reference_091809.pdf</a></td>
+</tr>
+<tr>
+<td>Llano_Uplift_Aquifer_System_GAM</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Llano_Uplift_Aquifer_System_GAM/Geodatabase/lnup_source_data.gdb.zip">lnup_source_data.gdb.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Llano_Uplift_Aquifer_System_GAM/Model_File/Llano_v1.01_model_reports.zip">Llano_v1.01_model_reports.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Llano_Uplift_Aquifer_System_GAM/Model_Grid/lnup_grid.zip">lnup_grid.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Llano_Uplift_Aquifer_System_GAM/Other_Data/0604830614_LlanoUpliftAquifers.pdf">0604830614_LlanoUpliftAquifers.pdf</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Llano_Uplift_Aquifer_System_GAM/Report/Llano_Uplift_Conceptual_Model_Report_Final.pdf">Llano_Uplift_Conceptual_Model_Report_Final.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Llano_Uplift_Aquifer_System_GAM/Report/Llano_Uplift_Numerical_Model_Report_Final.pdf">Llano_Uplift_Numerical_Model_Report_Final.pdf</a></td>
+</tr>
+<tr>
+<td>Lower_Rio_Grande_Valley_transport_model</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Lower_Rio_Grande_Valley_transport_model/Geodatabase/lrgv1.01_source_data_files.zipx">lrgv1.01_source_data_files.zipx</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Lower_Rio_Grande_Valley_transport_model/Model_File/lrgv1.01_model_files.zipx">lrgv1.01_model_files.zipx</a></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Lower_Rio_Grande_Valley_transport_model/Other_Data/lrgv1.01_predictive_files.zipx">lrgv1.01_predictive_files.zipx</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Lower_Rio_Grande_Valley_transport_model/Report/LRGV_NumericalReport.pdf">LRGV_NumericalReport.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Lower_Rio_Grande_Valley_transport_model/Report/LRGV_PredictiveReport.pdf">LRGV_PredictiveReport.pdf</a></td>
+</tr>
+<tr>
+<td>Mesilla_Bolsons_Aquifer_GAM</td>
+<td></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Mesilla_Bolsons_Aquifer_GAM/Model_File/Mesilla_Bolson_Model_Only.zip">Mesilla_Bolson_Model_Only.zip</a></td>
+<td></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Mesilla_Bolsons_Aquifer_GAM/Report/HMBL_Mesilla_Documentation.pdf">HMBL_Mesilla_Documentation.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Mesilla_Bolsons_Aquifer_GAM/Report/HMBL_Mesilla_Model_Report.pdf">HMBL_Mesilla_Model_Report.pdf</a></td>
+</tr>
+<tr>
+<td>Nacatoch_Aquifer_GAM</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Nacatoch_Aquifer_GAM/Geodatabase/Nacatoch.zip">Nacatoch.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Nacatoch_Aquifer_GAM/Model_File/Nacatoch_Model_Only.zip">Nacatoch_Model_Only.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Nacatoch_Aquifer_GAM/Model_Grid/nctc_grid.zip">nctc_grid.zip</a></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Nacatoch_Aquifer_GAM/Report/NCTC_Model_Report.pdf">NCTC_Model_Report.pdf</a></td>
+</tr>
+<tr>
+<td>Rustler_Aquifer_GAM</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Rustler_Aquifer_GAM/Geodatabase/rslr_geodatabases.zip">rslr_geodatabases.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Rustler_Aquifer_GAM/Model_File/rslr_model.zip">rslr_model.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Rustler_Aquifer_GAM/Model_Grid/rslr_grid.zip">rslr_grid.zip</a></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Rustler_Aquifer_GAM/Report/RSLR_GAM_Report.pdf">RSLR_GAM_Report.pdf</a></td>
+</tr>
+<tr>
+<td>Seymour_Aquifer_in_Haskell_Knox_and_Baylor_counties_GAM</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Seymour_Aquifer_in_Haskell_Knox_and_Baylor_counties_GAM/Geodatabase/symr_hkb_data_2023.zip">symr_hkb_data_2023.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Seymour_Aquifer_in_Haskell_Knox_and_Baylor_counties_GAM/Model_File/symr_hkb.zip">symr_hkb.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Seymour_Aquifer_in_Haskell_Knox_and_Baylor_counties_GAM/Model_Grid/symr_hkb_grid.zip">symr_hkb_grid.zip</a></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Seymour_Aquifer_in_Haskell_Knox_and_Baylor_counties_GAM/Report/SYMR_HKB_Conceptual_Model_Report.pdf">SYMR_HKB_Conceptual_Model_Report.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Seymour_Aquifer_in_Haskell_Knox_and_Baylor_counties_GAM/Report/Seymour_HKB_GAM_Report_Sealed_021414.pdf">Seymour_HKB_GAM_Report_Sealed_021414.pdf</a></td>
+</tr>
+<tr>
+<td>Seymour_and_Blaine_Aquifers_GAM</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Seymour_and_Blaine_Aquifers_GAM/Geodatabase/Seymour.zip">Seymour.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Seymour_and_Blaine_Aquifers_GAM/Model_File/Seymour_Model_Only.zip">Seymour_Model_Only.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Seymour_and_Blaine_Aquifers_GAM/Model_Grid/symr_grid.zip">symr_grid.zip</a></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Seymour_and_Blaine_Aquifers_GAM/Report/SYMR_Model_Report.pdf">SYMR_Model_Report.pdf</a></td>
+</tr>
+<tr>
+<td>Trinity_Aquifer_Hill_Country_GAM</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Trinity_Aquifer_Hill_Country_GAM/Geodatabase/TrinityHC_Source_GDB.zip">TrinityHC_Source_GDB.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Trinity_Aquifer_Hill_Country_GAM/Model_File/Trinity_Hill_Country_Model_Only.zip">Trinity_Hill_Country_Model_Only.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Trinity_Aquifer_Hill_Country_GAM/Model_Grid/trnt_h_grid.zip">trnt_h_grid.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Trinity_Aquifer_Hill_Country_GAM/Other_Data/ConceptualModelReport.pdf">ConceptualModelReport.pdf</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Trinity_Aquifer_Hill_Country_GAM/Report/R377_HillCountryGAM.pdf">R377_HillCountryGAM.pdf</a></td>
+</tr>
+<tr>
+<td>Trinity_northern_portion_and_Woodbine_Aquifers_GAM</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Trinity_northern_portion_and_Woodbine_Aquifers_GAM/Geodatabase/trnt_n.zip">trnt_n.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Trinity_northern_portion_and_Woodbine_Aquifers_GAM/Model_File/trnt_n_model_only.zip">trnt_n_model_only.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Trinity_northern_portion_and_Woodbine_Aquifers_GAM/Model_Grid/trnt_n_grid.zip">trnt_n_grid.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Trinity_northern_portion_and_Woodbine_Aquifers_GAM/Other_Data/Final_NTGAM_Appendices_Logs_AquiferTests.zipx">Final_NTGAM_Appendices_Logs_AquiferTests.zipx</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Trinity_northern_portion_and_Woodbine_Aquifers_GAM/Report/Final_NTGAM_Vol%20I%20Aug%202014_Report.pdf">Final_NTGAM_Vol%20I%20Aug%202014_Report.pdf</a></td>
+</tr>
+<tr>
+<td>West_Texas_Bolsons_Presidio_and_Redford_Bolsons_Aquifer_GAM</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/West_Texas_Bolsons_Presidio_and_Redford_Bolsons_Aquifer_GAM/Geodatabase/West_Texas_Bolsons_Presidio_Redford_Data_only.zip">West_Texas_Bolsons_Presidio_Redford_Data_only.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/West_Texas_Bolsons_Presidio_and_Redford_Bolsons_Aquifer_GAM/Model_File/West_Texas_Bolsons_Presidio_Redford_Model_only.zip">West_Texas_Bolsons_Presidio_Redford_Model_only.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/West_Texas_Bolsons_Presidio_and_Redford_Bolsons_Aquifer_GAM/Model_Grid/prbl_grid.zip">prbl_grid.zip</a></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/West_Texas_Bolsons_Presidio_and_Redford_Bolsons_Aquifer_GAM/Report/PRBL_Conceptual_Model_Report.pdf">PRBL_Conceptual_Model_Report.pdf</a><br><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/West_Texas_Bolsons_Presidio_and_Redford_Bolsons_Aquifer_GAM/Report/PRBL_ModelFinalReport.pdf">PRBL_ModelFinalReport.pdf</a></td>
+</tr>
+<tr>
+<td>West_Texas_Bolsons_Red_Light_Green_River_and_Eagle_Flat_Aquifer_GAM</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/West_Texas_Bolsons_Red_Light_Green_River_and_Eagle_Flat_Aquifer_GAM/Geodatabase/West_Texas_Bolsons.zip">West_Texas_Bolsons.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/West_Texas_Bolsons_Red_Light_Green_River_and_Eagle_Flat_Aquifer_GAM/Model_File/West_Texas_Bolsons_Model_Only.zip">West_Texas_Bolsons_Model_Only.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/West_Texas_Bolsons_Red_Light_Green_River_and_Eagle_Flat_Aquifer_GAM/Model_Grid/wtbl_grid.zip">wtbl_grid.zip</a></td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/West_Texas_Bolsons_Red_Light_Green_River_and_Eagle_Flat_Aquifer_GAM/Report/WTBL_Model_Report.pdf">WTBL_Model_Report.pdf</a></td>
+</tr>
+<tr>
+<td>Yegua-Jackson_Aquifer_GAM</td>
+<td></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Yegua-Jackson_Aquifer_GAM/Geodatabase/Yegua_Jackson.zip">Yegua_Jackson.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Yegua-Jackson_Aquifer_GAM/Model_File/Yegua_Jackson_Model_Only.zip">Yegua_Jackson_Model_Only.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Yegua-Jackson_Aquifer_GAM/Model_Grid/ygjk_grid.zip">ygjk_grid.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Yegua-Jackson_Aquifer_GAM/Other_Data/Yegua_Jackson_Structure_Study.zip">Yegua_Jackson_Structure_Study.zip</a></td>
+<td><a href="/corral-repl/tacc/aci/PT2050/projects/PTDATAX-272/twdb_gam_out/Yegua-Jackson_Aquifer_GAM/Report/YGJK_Model_Report.pdf">YGJK_Model_Report.pdf</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <!-- Footer -->
+<footer class="md-footer">
+
+    <!-- Link to previous and/or next page -->
+    
+  
+    <!-- Further information -->
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+  
+        <!-- Social links -->
+        
+
+        
+        <!-- Repository information -->
+        
+            <a href="https://github.com/In-For-Disaster-Analytics/subside" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    In-For-Disaster-Analytics/subside
+  </div>
+</a>
+        
+      </div>
+    </div>
+  </footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.path", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

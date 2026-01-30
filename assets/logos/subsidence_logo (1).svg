@@ -1,0 +1,50 @@
+<svg viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Transparent background -->
+  
+  <!-- Text "SUBSIDE" with shadow -->
+  <defs>
+    <filter id="textShadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  
+  <!-- Main text -->
+  <text x="50" y="90" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" 
+        font-size="56" font-weight="700" fill="white" 
+        letter-spacing="1" filter="url(#textShadow)">
+    SUBSIDE
+  </text>
+  
+  <!-- Wavy layers icon next to text (like the X in DataX) -->
+  <g transform="translate(330, 30)">
+    <!-- Wave 1 - Navy -->
+    <path d="M 0 20 Q 20 15, 40 20 T 80 20 L 80 30 Q 60 35, 40 30 T 0 30 Z" 
+          fill="#003366" opacity="0.95"/>
+    
+    <!-- Wave 2 - Turquoise -->
+    <path d="M 0 35 Q 20 30, 40 35 T 80 35 L 80 50 Q 60 55, 40 50 T 0 50 Z" 
+          fill="#00CED1" opacity="0.9"/>
+    
+    <!-- Wave 3 - Yellow -->
+    <path d="M 0 55 Q 20 50, 40 55 T 80 55 L 80 70 Q 60 75, 40 70 T 0 70 Z" 
+          fill="#FFD700" opacity="0.85"/>
+    
+    <!-- Wave 4 - Burnt Orange Brown -->
+    <path d="M 0 75 Q 20 70, 40 75 T 80 75 L 80 90 Q 60 95, 40 90 T 0 90 Z" 
+          fill="#C65D3B" opacity="0.8"/>
+  </g>
+  
+  <!-- Subtle gradient overlay on text for depth -->
+  <defs>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0e0e0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <text x="50" y="90" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" 
+        font-size="56" font-weight="700" fill="url(#textGradient)" 
+        letter-spacing="1">
+    SUBSIDE
+  </text>
+</svg>
