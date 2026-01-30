@@ -4,9 +4,4 @@ author:
    - DSO team
 created: 2025-08-26
 ---
-## [Houston Compaction](houston_compaction.md)
-Write up on Houston Compaction data from USGS extensometer data
-
-<div class="map">
-  <iframe width=100%, height=800, frameBorder=0 src="../webpages/houston_compaction/index.html"></iframe>
-</div>
+This section provides links to Subside related products and resources.
